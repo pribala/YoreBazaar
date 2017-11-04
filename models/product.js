@@ -1,0 +1,39 @@
+module.exports = function(sequelize, DataTypes) {
+  var Product = sequelize.define("Product", {
+    product_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    product_image: {
+      type: DataTypes.STRING,
+      defaultValue: "http://seniorchoicesnw.com/wp-content/uploads/2016/04/Fotolia_82912936_Subscription_Monthly_M-300x200.jpg",
+      validate: {
+        isUrl: true
+      }
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    sales: {
+      type: DataTypes.DECIMAL,
+      defaultValue: 0
+    }
+  });
+
+  Product.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Product.belongsTo(models.Department, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  return Product;
+};
+
