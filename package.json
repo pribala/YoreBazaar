@@ -1,0 +1,23 @@
+{
+  "name": "yorebazaar",
+  "version": "1.0.0",
+  "description": "Personalized shopping experience",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pribala/YoreBazaar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pribala/YoreBazaar/issues"
+  },
+  "homepage": "https://github.com/pribala/YoreBazaar#readme",
+  "dependencies": {
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.22.2"
+  }
+}
