@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "data1sK1ng$10",
-    "database": "database_development",
+    "password": "Kinnera06",
+    "database": "yourebazzar",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
