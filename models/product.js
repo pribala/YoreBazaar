@@ -26,13 +26,17 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Product.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    // We're saying that a Product should belong to a Department
+    // A Product can't be created without a Department due to the foreign key constraint
     Product.belongsTo(models.Department, {
       foreignKey: {
         allowNull: false
       }
     });
+
+    Product.belongsToMany(models.Order, {through: 'OrderProduct'});
+
+    Product.belongsToMany(models.Cart, {through: 'CartProduct'});
   };
   return Product;
 };
