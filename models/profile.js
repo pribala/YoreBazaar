@@ -21,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
           }
         });
       };
+      users.sync();
       // Export the database functions for the controller 
     return profiles;
     };
