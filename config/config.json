@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "data1sK1ng$10",
-    "database": "yorebazzar",
+    "database": "yorebazaar",
     "host": "localhost",
     "dialect": "mysql"
   },

@@ -1,0 +1,78 @@
+body {
+	color: #AB2910;
+	font-family: 'Trocchi', serif;
+	background-image: url("../img/food.png");
+	height: 100%;
+}
+
+li {
+  padding: 10px;
+  list-style: none;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.jumbotron {
+	background-color: #FFFFCC;
+	color: #AB2910;
+	background-image: url("https://images.pexels.com/photos/460595/pexels-photo-460595.jpeg?h=350&auto=compress&cs=tinysrgb");
+	background-repeat: no-repeat;
+}
+
+.fa-cutlery {
+	color: #67860F;
+}
+
+.lead {
+	font-weight: bold;
+}
+
+.card-header {
+	background-color: #FFFFCC;
+	font-size: 20px;	
+}
+
+.btn {
+	background-color: #7DA315;
+}
+
+footer {
+  font-size: 15px;
+  padding-top: 20px;
+  min-height: 10%;
+  overflow: auto;
+  color: #006666;
+}
+
+.wrapper {
+	min-height: 90%;
+	margin-bottom: 30px;
+}	
+
+.navLink:link,
+.navLink:visited,
+.navLink:hover,
+.navLink:active {
+	color: #006666;
+}
+
+.card-body {
+	background-color: #F8EEE5;
+	background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,0.5));
+}
+
+input[type="text"] {
+	background-color: #FEFEF2;
+}
