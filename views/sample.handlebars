@@ -1,29 +1,17 @@
-{{!-- <p>i am in poducts page</p>
-<div>
-    {{productinfo}}
-</div> --}}
-<ul>
+
+  <div class="prodslist row">
 {{#each item}}
-    <img src="{{image_url}}" width="200px">
+<div class="col-sm-6 col-md-3">
+    <img class= "prodimg" src="{{image_url}}" width="200rem">
     <p>{{Label}}</p>
     <p>{{Price}}</p>
     <form action="/" method="POST">
-  	<button type="cart">Add to Cart</button>
+  	<button type="cart" style="float:left"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true">Add to Cart</i></button>
   </form>
+  </div>
+  <br><br>
 {{/each}}
-</ul>
+</div>
 
- {{!-- {{#each burgers}}
 
-        <li>
-          <img src="../img/cuteburger.png" width="100px">
-          <p>
-            {{this.burger_name}}
-          </p>
-          <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="devoured" value="true">
-            <button type="submit" class="btn btn-default" style="background-color:black; color:yellow; padding: 15px">Eat it!</button>
-          </form>
-        </li>
-      {{/unless}}
-    {{/each}} --}}
+ 

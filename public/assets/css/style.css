@@ -11,6 +11,26 @@ max-height: 150px;
 .price {
     font-weight: bold;
     font-size: 16px;
+} 
+ .prodimg{
+  margin-top: 20px;
+  display:inline-block;
+}
+/* p{
+  width:inherit;
+  margin: 0px;
+  margin-left: 0px;
+  text-align:center; 
+} */
+.prodslist{
+  margin-top: 50px;
+  display: inline;
+  height: 200px;
+  width:200px;
+} 
+
+button{
+  align:center;
 }
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -20,7 +40,7 @@ html {
   }
   body {
     /* Margin bottom by footer height */
-    margin-bottom:2rem;
+    margin-bottom:20rem;
   }
   .footer {
     position: absolute;
@@ -54,3 +74,6 @@ html {
       padding: 0.7em 1em;
   }
   
+div.conatiner{
+display: inline-block;
+}
