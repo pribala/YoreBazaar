@@ -1,24 +1,31 @@
 module.exports = function(sequelize, DataTypes) {
-    var users = sequelize.define("users",{
+    var User = sequelize.define("User",{
      user_id : {
         primaryKey      : true,
         autoIncrement   : true,
         type            : DataTypes.INTEGER,
         allowNull       : false
-    }, user_name: {
+     }, 
+     user_name: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    email : {
+     },
+     email : {
         type : DataTypes.STRING,
         isUnique :true,
         allowNull:false,
         validate:{
             isEmail : true
         }
-    },
+     },
     });
-    
-      // Export the database functions for the controller (catsController.js)
-    return users;
-    };
+
+    User.associate = function(models) {
+    // Associating User with Profile
+    // When a User is deleted, also delete any associated Profiles
+    User.hasMany(models.Profile, {
+      onDelete: "cascade"
+    });
+  };
+    return User;
+};

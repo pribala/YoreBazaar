@@ -5,13 +5,21 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     overhead_costs: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     product_sale: {
-      type: DataTypes.DECIMAL ,
-      allowNull:false
+      type: DataTypes.DECIMAL,
+      defaultValue: 0
     }
   });
+
+  Department.associate = function(models) {
+    // Associating Department with Products
+    // When a Department is deleted, also delete any associated Products
+    Department.hasMany(models.Product, {
+      onDelete: "cascade"
+    });
+  };
   return Department;
 };

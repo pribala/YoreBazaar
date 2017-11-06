@@ -1,26 +1,42 @@
 module.exports = function(sequelize, DataTypes) {
-    var profiles = sequelize.define("profiles",{
+    var Profile = sequelize.define("Profile",{
      profile_id : {
         primaryKey      : true,
         autoIncrement   : true,
         type            : DataTypes.INTEGER,
         allowNull       : false
-    },profile_name:{
+    },
+    profile_name:{
         type: DataTypes.STRING,
-        defaultvalue:"",
-        validate:{
-            isUrl:true
-        }},
+        allowNull: false,
+       },
+    profile_image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            isUrl: true
+        }
+    }   
     });
-    profiles.associate = function(models) {
-        // We're saying that a Post should belong to an Author
-        // A Post can't be created without an Author due to the foreign key constraint
-        profiles.belongsTo(models.users, {
+    Profile.associate = function(models) {
+        // We're saying that a Profile should belong to an User
+        // A Profile can't be created without an User due to the foreign key constraint
+        Profile.belongsTo(models.User, {
           foreignKey: {
             allowNull: false
           }
         });
+        
+        Profile.hasOne(models.Cart, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
+
+        Profile.hasMany(models.Order, {
+            onDelete: "cascade"
+        });
       };
       // Export the database functions for the controller 
-    return profiles;
+    return Profile;
     };
