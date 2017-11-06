@@ -1,46 +1,23 @@
 <section class="container-fluid flex-grow">
-    <div class="row">
-        <div class="col-lg-9 order-md-2 pt-2">
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/04/26/Pictures/_e10abadc-2a73-11e7-a28f-c563b2540923.jpg"
-                            alt="..." class="img-responsive">
-                        <div class="caption">
-                            <h3>Thumbnail label</h3>
-                            <p class="description">Chethan bagath Novel</p>
-                            <div class="clearfix">
-                                <div class="price pull-left">$12</div>
-                                <a href="#" class="btn btn-success pull-right" role="button">Button</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{!-- USING CARD --}}
-                <div class="card">
-                    <img class="card-img-top" src="http://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/04/26/Pictures/_e10abadc-2a73-11e7-a28f-c563b2540923.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            Novel
-                        </h4>
-                        <p class="card-text">
-                            chethan bahgath book
-                        </p>
-                        <a href="#!" class="btn btn-primary">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    
-        <div class="col-lg-3 order-md-1 pt-3">
+<div class="row ">
+{{#each item}}
+<div class="col-md-6 col-lg-3">
+    <img class= "prodimg" src="{{image_url}}" width="200rem">
+    <p>{{Label}}</p>
+    <p>{{Price}}</p>
+    <form action="/" method="POST">
+  	<button type="cart" style="float:right;color:black;background-color:transparent"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></button>
+  </form>
+  </div>
+  <br><br>
+{{/each}}
+</div>
+{{!-- <div class="col-lg-3 ml-auto">
             <div class="bg-faded mb-3">
                 <h5 class="card-header">List of things</h5>
                 <div class="card-body">
                     <h6>Ain't nobody got time for:</h6> 1. That
                 </div>
             </div>
-        </div>
-    </div>
+        </div> --}}
 </section>
