@@ -14,8 +14,7 @@ var items = [
     image_url: "http://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/04/26/Pictures/_e10abadc-2a73-11e7-a28f-c563b2540923.jpg",
     Label: "chethan bhagath Novel",
     Price: "12$"
-  }, 
-  {
+  },{
     image_url: "https://images.gr-assets.com/books/1470082995l/29056083.jpg",
     Label: "The Cursed Child",
     Price: "43$"

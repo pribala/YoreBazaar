@@ -4,7 +4,8 @@
   "description": "Personalized shopping experience",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/pribala/YoreBazaar/issues"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "homepage": "https://github.com/pribala/YoreBazaar#readme",
   "dependencies": {
     "mysql2": "^1.4.2",
@@ -26,6 +30,10 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.5",
     "method-override": "^2.3.10",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "bcrypt-nodejs": "0.0.3",
+    "express-session": "^1.14.2"
   }
 }
