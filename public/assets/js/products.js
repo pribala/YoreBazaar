@@ -24,9 +24,7 @@ $(function() {
   //     }
   //   );
   // });
-// var html ="";
-  
-populateDropDown();
+  populateDropDown();
   function populateDropDown(){
 
     $.ajax("/api/departments", {
@@ -36,8 +34,7 @@ populateDropDown();
            $("#dept").append("<option value='"+item.id+"'>"+item.dept_name+"</option>");
          });
        
-      }
-    );
+      });
   }
 
   $(".create-form").on("submit", function(event) {

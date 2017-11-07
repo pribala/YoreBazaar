@@ -1,78 +1,61 @@
-body {
-	color: #AB2910;
-	font-family: 'Trocchi', serif;
-	background-image: url("../img/food.png");
-	height: 100%;
+.prodimg{
+ height: 150px;
+  margin-top: 20px;
+  display:inline-block;
 }
+ p{
+  margin: 0px;
+  text-align:center; 
+} 
 
-li {
-  padding: 10px;
-  list-style: none;
+button{
+  align:center;
 }
-
-.label {
-  font-weight: bold;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom:20rem;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;   /* Set the fixed height of the footer here */
+   height: 15rem;
+    width:100%;
+  }
+  footer {
+    padding-top: 30px;
+    background-color: #292c2f;
+    color: #bbb;
+  }
+  
+  footer a {
+    color: #999;
+    text-decoration:none;
+  }
+  
+  footer a:hover, footer a:focus {
+    color: #aaa;
+    text-decoration:none;
+    border-bottom:1px dotted #999;
+  }
+  
+  footer .form-control {
+      background-color: #1f2022;
+      box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      border: none;
+      resize: none;
+      color: #d1d2d2;
+      padding: 0.7em 1em;
+  }
+  
+div.conatiner{
+display: inline;
 }
-
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
-
-.form-group {
-  margin-bottom: 5px;
-}
-
-.jumbotron {
-	background-color: #FFFFCC;
-	color: #AB2910;
-	background-image: url("https://images.pexels.com/photos/460595/pexels-photo-460595.jpeg?h=350&auto=compress&cs=tinysrgb");
-	background-repeat: no-repeat;
-}
-
-.fa-cutlery {
-	color: #67860F;
-}
-
-.lead {
-	font-weight: bold;
-}
-
-.card-header {
-	background-color: #FFFFCC;
-	font-size: 20px;	
-}
-
-.btn {
-	background-color: #7DA315;
-}
-
-footer {
-  font-size: 15px;
-  padding-top: 20px;
-  min-height: 10%;
-  overflow: auto;
-  color: #006666;
-}
-
-.wrapper {
-	min-height: 90%;
-	margin-bottom: 30px;
-}	
-
-.navLink:link,
-.navLink:visited,
-.navLink:hover,
-.navLink:active {
-	color: #006666;
-}
-
-.card-body {
-	background-color: #F8EEE5;
-	background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,0.5));
-}
-
-input[type="text"] {
-	background-color: #FEFEF2;
+p#deptp{
+text-align: left;
 }

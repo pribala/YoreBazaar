@@ -18,7 +18,7 @@ module.exports = function(app) {
       var hbsObject = {
         departments: dbDepartment
       };
-      res.render("managestore", hbsObject);
+      res.render("shop/departments", hbsObject);
     });
   });
 
@@ -86,3 +86,4 @@ module.exports = function(app) {
 
   });
 };
+

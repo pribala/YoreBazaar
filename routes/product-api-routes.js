@@ -5,6 +5,7 @@
 // *** Dependencies
 
 // Requiring our models
+
 var db = require("../models");
 
 // Routes =============================================================
@@ -18,7 +19,7 @@ module.exports = function(app) {
       var hbsObject = {
         products: dbProduct
       };
-      res.render("index", hbsObject);
+      res.render("shop/products", hbsObject);
     });
 
   });
@@ -44,19 +45,6 @@ module.exports = function(app) {
     db.Product.findOne({where: {id:req.params.id}}).then(function(dbProduct) {
       //We have access to the products as an argument inside of the callback function
       res.json(dbProduct);
-    });
-
-  });
-
-   // GET route for getting all of the todos
-  app.get("/products", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Product.findAll({}).then(function(dbProduct) {
-      //We have access to the products as an argument inside of the callback function
-      var hbsObject = {
-        products: dbProduct
-      };
-      res.render("index", hbsObject);
     });
 
   });
