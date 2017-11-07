@@ -12,6 +12,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DECIMAL,
       defaultValue: 0
     }
+  }, {
+  // don't add the timestamp attributes (updatedAt, createdAt)
+  timestamps: false,
   });
 
   Department.associate = function(models) {
