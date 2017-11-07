@@ -17,11 +17,15 @@
   },
   "homepage": "https://github.com/pribala/YoreBazaar#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "express-session": "^1.14.2",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
     "mysql2": "^1.4.2",
-    "sequelize": "^4.22.2"
+    "sequelize": "^4.22.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Passport Authentication</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Finger+Paint|Freckle+Face|Love+Ya+Like+A+Sister" rel="stylesheet"> 
+</head>
+
+<body>
+  <!-- <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav> -->
+  <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+    
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer" aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+       <a class="navbar-brand" href="#">
+      <img src="http://www.marketwire.com/library/MwGo/2016/9/14/11G114111/shopbazaar-91a09a342513aad497a057ce13763bc8.jpg" width="70"
+          height="30" alt="">
+  </a>
+<div class="collapse navbar-collapse " id="navbarsExampleContainer">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item  active dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">Departments</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown02">
+                  <a class="dropdown-item" href="#">Clothing</a>
+                  <a class="dropdown-item" href="#">Household</a>
+                  <a class="dropdown-item" href="#">Automobile</a>
+              </div>
+          </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item  active dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown02">
+                  <a class="dropdown-item" href="#">
+                      <i class="fa fa-user-circle-o" aria-hidden="true"></i> Signin</a>
+                  <a class="dropdown-item" href="#">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                      Signout</a>
+                  <a class="dropdown-item" href="#">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                      Account Information</a>
+              </div>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="#">
+                  <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> Cart
+                  <span class="sr-only">(current)</span>
+              </a>
+          </li>
+      </ul>
+
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Login Form</h2>
+        <form class="login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+        <br />
+        <p>Or sign up <a href="/">here</a></p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-4 col-sm-3 ml-auto">
+                <h5><i class="fa fa-road"></i>You're Baazar</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="">Product</a></li>
+                            <li><a href="">Benefits</a></li>
+                            <li><a href="">Partners</a></li>
+                            <li><a href="">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="">Documentation</a></li>
+                            <li><a href="">Support</a></li>
+                            <li><a href="">Legal Terms</a></li>
+                            <li><a href="">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+                </ul>
+                <br>
+            </div>
+            <div class="col-md-2">
+                <h5 class="text-md-right">Contact Us</h5>
+                <hr>
+            </div>
+            <div class="col-md-5">
+                <form>
+                    <fieldset class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                    </fieldset>
+                    <fieldset class="form-group text-xs-right">
+                        <button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+
+</body>
+
+</html>
