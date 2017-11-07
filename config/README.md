@@ -1,2 +1,0 @@
-# YoreBazaar
-Personalized shopping experience
