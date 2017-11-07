@@ -39,6 +39,21 @@ module.exports = function(app) {
     });
   });
 
+  // GET route for getting all products by department
+  app.get("/products/:dept_id", function(req, res) {
+    var query = {};
+    if (req.params.dept_id) {
+      query.DepartmentId = req.params.dept_id;
+    }
+    // 1. Add a join here to include all of the Departments for these products
+    db.Product.findAll({
+      where: query,
+      include:[db.Department]
+    }).then(function(dbProduct) {
+      res.json(dbProduct);
+    });
+  });
+
    // GET route for getting all of the todos
   app.get("/product/:id", function(req, res) {
     // findOne returns one entry for a table
