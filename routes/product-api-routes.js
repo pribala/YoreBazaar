@@ -12,7 +12,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the todos
-  app.get("/products", function(req, res) {
+  app.get("/", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Product.findAll({}).then(function(dbProduct) {
       //We have access to the products as an argument inside of the callback function

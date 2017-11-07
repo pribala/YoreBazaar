@@ -1,4 +1,9 @@
-.prodimg{
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+ .prodimg{
  height: 150px;
   margin-top: 20px;
   display:inline-block;

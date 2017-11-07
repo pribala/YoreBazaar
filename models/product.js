@@ -28,7 +28,6 @@ module.exports = function(sequelize, DataTypes) {
   timestamps: false,
   });
 
-
   Product.associate = function(models) {
     // We're saying that a Product should belong to a Department
     // A Product can't be created without a Department due to the foreign key constraint
