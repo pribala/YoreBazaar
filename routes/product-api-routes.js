@@ -23,6 +23,44 @@ module.exports = function(app) {
 
   });
 
+  // GET route for getting all of the posts
+  app.get("/api/products", function(req, res) {
+    var query = {};
+    if (req.query.dept_id) {
+      query.DepartmentId = req.query.dept_id;
+    }
+    // 1. Add a join here to include all of the Departments for these products
+    db.Product.findAll({
+      where: query,
+      include:[db.Department]
+    }).then(function(dbProduct) {
+      res.json(dbProduct);
+    });
+  });
+
+   // GET route for getting all of the todos
+  app.get("/product/:id", function(req, res) {
+    // findOne returns one entry for a table
+    db.Product.findOne({where: {id:req.params.id}}).then(function(dbProduct) {
+      //We have access to the products as an argument inside of the callback function
+      res.json(dbProduct);
+    });
+
+  });
+
+   // GET route for getting all of the todos
+  app.get("/products", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Product.findAll({}).then(function(dbProduct) {
+      //We have access to the products as an argument inside of the callback function
+      var hbsObject = {
+        products: dbProduct
+      };
+      res.render("index", hbsObject);
+    });
+
+  });
+
   // POST route for saving a new product
   app.post("/api/newproduct", function(req, res) {
     // create takes an argument of an object describing the item we want to insert
