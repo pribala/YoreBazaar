@@ -19,7 +19,6 @@ module.exports = function(app) {
         products: dbProduct
       };
       res.render("index", hbsObject);
-      //res.json(dbProduct);
     });
 
   });
