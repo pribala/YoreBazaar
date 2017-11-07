@@ -18,7 +18,24 @@ module.exports = function(app) {
       var hbsObject = {
         departments: dbDepartment
       };
-      res.render("index", hbsObject);
+      res.render("managestore", hbsObject);
+    });
+  });
+
+   app.get("/api/departments", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Department.findAll({}).then(function(dbDepartment) {
+      //We have access to the departments as an argument inside of the callback function
+      res.json(dbDepartment);
+    });
+  });
+
+  // GET route for getting all of the departments
+  app.get("/department/:id", function(req, res) {
+    // findOne returns one entry for a table
+    db.Department.findOne({where: {id: req.params.id}}).then(function(dbDepartment) {
+      //We have access to the departments as an argument inside of the callback function
+      res.json(dbDepartment);
     });
   });
 

@@ -24,6 +24,21 @@ $(function() {
   //     }
   //   );
   // });
+// var html ="";
+  
+populateDropDown();
+  function populateDropDown(){
+
+    $.ajax("/api/departments", {
+      type: "GET",
+      }).then(function(data) {
+          data.forEach(function(item){
+           $("#dept").append("<option value='"+item.id+"'>"+item.dept_name+"</option>");
+         });
+       
+      }
+    );
+  }
 
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
@@ -33,7 +48,7 @@ $(function() {
       name: $("#name").val().trim(),
       price: parseFloat($("#price").val().trim()),
       quantity: parseInt($("#quantity").val().trim()),
-      deptId: parseInt($("#deptId").val().trim())
+      deptId: parseInt($("#dept").val().trim())
     };
 
     // Send the POST request.

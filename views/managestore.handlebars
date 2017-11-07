@@ -1,0 +1,81 @@
+<div class="container wrapper">
+    <div class="jumbotron text-right">
+      <h1 class="display-3"><strong> Yore Bazaar</strong></h1>
+      <p class="lead mt-4"><i class="fa fa-cutlery" aria-hidden="true"></i> Personalized Shopping Experience!</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header">
+          Add a Department
+        </div>
+        <div class="card-body">
+          <form class="create-department">
+            <div class="form-group">
+            <label for="name">Department Name:</label>
+            <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+            <label for="cost">Overhead Costs:</label>
+            <input type="text" id="cost" name="cost">
+            </div>
+            <button type="submit" class="btn">Add a Department</button>
+          </form>
+        </div>
+      </div>      
+    </div>
+  </div> 
+  <div class="row mt-4">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header text-center">
+          Department List</div>
+        <div class="card-body">
+          <p class="card-text">
+            <ul>
+              {{#each departments}}
+                <li>
+                <div class="row">
+                  <div class="col">
+                  {{ dept_name }}
+                  <input type='text' class='edit' style='display: none;'>
+                  </div>
+                  <div class="col">
+                   {{overhead_costs}} <button id="delete" data-id={{id}}><i class="fa fa-trash" aria-hidden="true"></i></button> <button id="edit" data-id={{id}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                </div>   
+                </li>
+              {{/each}}
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+    <div class="modal fade" id="editDept" tabindex="-1" role="dialog" aria-labelledby="matchInfoTitle" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="matchInfoTitle">Edit Department</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<footer class="footer text-center">
+    <div class="container align-middle">
+      <p><a class="navLink" href="https://github.com/pribala/YoreBazaar" target="_blank">GitHub Repo</a></p>
+      <p>@Copyright PRIYA BALAKRISHNAN</p>
+    </div>  
+</footer>
+<!-- jQuery -->
+<script src="/assets/js/store.js"></script>
