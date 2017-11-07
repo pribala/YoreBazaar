@@ -18,7 +18,7 @@ module.exports = function(app) {
       var hbsObject = {
         users: dbUser
       };
-      res.render("userpage", hbsObject);
+      res.render("shop/products", hbsObject);
     });
   });
 
