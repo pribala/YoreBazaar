@@ -1,5 +1,16 @@
 
 USE  yorebazaar;
+ 
+
+
+INSERT INTO departments
+  (dept_name, overhead_costs)
+ VALUES
+  ("Books & Audible", 100);
+INSERT INTO departments
+  (dept_name, overhead_costs) 
+VALUES
+  ("Electronics", 150);
 -- Creates new rows containing data in all named columns --
 
 INSERT INTO products
@@ -12,12 +23,3 @@ VALUES
   ("Sony headphones", 21.21, "https://cnet3.cbsistatic.com/img/AXZ-UHoFdA7pmR7Ipt3-5tuqizE=/1070x602/2016/03/18/5fb797a8-078f-4337-b026-cd1abc4694e8/audeze-sine-headphones-03.jpg", 91,2),
   ( "chethan bhagath Novel", 19.00, "http://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/04/26/Pictures/_e10abadc-2a73-11e7-a28f-c563b2540923.jpg", 890, 1),
   ( "The Cursed Child", 43.00,"https://images.gr-assets.com/books/1470082995l/29056083.jpg", 560, 1);
-
-INSERT INTO departments
-  (dept_name, overhead_costs)
-VALUES
-  ("Books & Audible", 100);
-INSERT INTO departments
-  (dept_name, overhead_costs)
-VALUES
-  ("Electronics", 150);

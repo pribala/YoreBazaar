@@ -8,6 +8,11 @@
 	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Finger+Paint|Freckle+Face|Love+Ya+Like+A+Sister" rel="stylesheet"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  
 </head>
 
 <body>
@@ -67,6 +72,37 @@
         <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
+    <div class="row mt-5 profiles">
+      <div class="col-md-3">
+        <button class="btn add-profile"><i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="profileInfo" tabindex="-1" role="dialog" aria-labelledby="matchInfoTitle" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="profileTitle">Add Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <form name="newProfile">
+               <label for="profilename">Profile Name</label>
+               <input type="text" name="profilename" id="profilename" placeholder="Name">
+
+               <label for="profileImage">Profile Image</label>
+               <input type="url" name="profileimage" id="profileimage" placeholder="Add a URL">
+               <button type="submit" id="profile-submit">Add Profile</button>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <footer class="footer">
     <div class="container">
@@ -119,8 +155,8 @@
         </div>
     </div>
 </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+  
+  <script type="text/javascript" src="/assets/js/members.js"></script>
 
 </body>
 
