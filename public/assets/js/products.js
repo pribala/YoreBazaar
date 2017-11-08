@@ -7,8 +7,17 @@ $(document).ready(function() {
           data.forEach(function(item){
            $(".dropdown-menu").append("<a class='dropdown-item' href='/products/"+item.id+"'>"+item.dept_name+"</a>");
          });
-       
       });
+
+  $(".cart-btn").click(function(e){
+    e.preventDefault();
+    $.get("/api/user_data").then(function(data) {
+      if(Object.getOwnPropertyNames(data).length === 0){
+        
+      };
+    
+  });
+  });    
  
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
