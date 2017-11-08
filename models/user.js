@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
 // sometimes causes errors on Windows machines
 var bcrypt = require("bcrypt-nodejs");
     var User = sequelize.define("User",{
-
      // user_id : {
       
      //    autoIncrement   : true,
@@ -14,7 +13,6 @@ var bcrypt = require("bcrypt-nodejs");
      //    type: DataTypes.STRING,
      //    allowNull: false
      // },
-
      email : {
         type : DataTypes.STRING,
          primaryKey: true,

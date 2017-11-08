@@ -11,7 +11,7 @@ var db = require("../models");
 // Routes =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
+  // GET route for getting all of the products
   app.get("/", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Product.findAll({}).then(function(dbProduct) {
@@ -24,7 +24,7 @@ module.exports = function(app) {
 
   });
 
-  // GET route for getting all of the posts
+  // GET route for getting all of the products
   app.get("/api/products", function(req, res) {
     var query = {};
     if (req.query.dept_id) {
@@ -50,7 +50,11 @@ module.exports = function(app) {
       where: query,
       include:[db.Department]
     }).then(function(dbProduct) {
-      res.json(dbProduct);
+      //res.json(dbProduct);
+      var hbsObject = {
+        products: dbProduct
+      };
+      res.render("shop/products", hbsObject);
     });
   });
 

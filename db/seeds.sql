@@ -1,6 +1,6 @@
 
 USE  yorebazaar;
--- Creates new rows containing data in all named columns --
+ 
 
 
 INSERT INTO departments

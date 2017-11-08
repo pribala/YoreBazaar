@@ -16,6 +16,12 @@ form.login {
 button{
   align:center;
 }
+.img-fluid{
+  height:10rem;
+}
+.btn{
+margin-top:20px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
