@@ -13,32 +13,38 @@ module.exports = function(app) {
   // GET route for getting all of the users
   app.get("/members", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Profile.findAll({}).then(function(dbProfile) {
-      //We have access to the user as an argument inside of the callback function
-      // var hbsObject = {
-      //   profiles: dbProfile
-      // };
-      //res.render("members", hbsObject);
-      res.json(dbProfile);
-    });
+    // db.Profile.findAll({}).then(function(dbProfile) {
+    //   //We have access to the user as an argument inside of the callback function
+    //   // var hbsObject = {
+    //   //   profiles: dbProfile
+    //   // };
+    //   //res.render("members", hbsObject);
+    //   res.json(dbProfile);
+    // });
+    res.render("/members");
   });
 
   // GET route for getting all of the users
-  app.get("/profiles", function(req, res) {
+  app.get("/profiles/:id", function(req, res) {
     // findAll returns all entries for a table when used with no options
+    console.log()
     var query = {};
-    if (req.query.user_email) {
-      query.UserEmail = req.query.user_email;
-    }
+    // if (req.query.user_email) {
+    //   query.UserEmail = req.query.user_email;
+    // }
+    query.UserEmail = req.params.id;
     db.Profile.findAll({where: query,
       include:[db.User]
     }).then(function(dbProfile) {
       //We have access to the user as an argument inside of the callback function
-      // var hbsObject = {
-      //   profiles: dbProfile
-      // };
-      //res.render("members", hbsObject);
-      res.json(dbProfile);
+      var hbsObject = {
+        profiles: dbProfile,
+        user: query.UserEmail
+      };
+       console.log(hbsObject);
+      res.render("shop/members", hbsObject);
+      // console.log(dbProfile);
+      // res.json(dbProfile);
     });
   });
 

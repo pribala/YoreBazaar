@@ -1,22 +1,15 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
   
-    $.ajax("/api/departments", {
-      type: "GET",
-      }).then(function(data) {
-          data.forEach(function(item){
-           $(".dropdown-menu").append("<a class='dropdown-item' href='/products/"+item.id+"'>"+item.dept_name+"</a>");
-         });
-      });
-
   $(".cart-btn").click(function(e){
     e.preventDefault();
     $.get("/api/user_data").then(function(data) {
       if(Object.getOwnPropertyNames(data).length === 0){
-        
-      };
-    
-  });
+        window.location.replace("/loginpage");
+      }else {
+        window.location.replace("/members");
+      }
+    });
   });    
  
   $(".create-form").on("submit", function(event) {
