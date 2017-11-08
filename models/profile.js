@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
         // We're saying that a Profile should belong to an User
         // A Profile can't be created without an User due to the foreign key constraint
         Profile.belongsTo(models.User, {
-          foreignKey: {
+         foreignKey: {
             allowNull: false
           }
         });
@@ -40,3 +40,5 @@ module.exports = function(sequelize, DataTypes) {
       // Export the database functions for the controller 
     return Profile;
     };
+
+    
