@@ -9,10 +9,10 @@ var bcrypt = require("bcrypt-nodejs");
         type            : DataTypes.INTEGER,
         allowNull       : false
      }, 
-     user_name: {
-        type: DataTypes.STRING,
-        allowNull: false
-     },
+    //  user_name: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false
+    //  },
      email : {
         type : DataTypes.STRING,
         isUnique :true,
