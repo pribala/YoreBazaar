@@ -1,11 +1,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name">{{UserEmail}}</span></h2>
+        <h2>Welcome <span class="member-name">{{user}}</span></h2>
       </div>
     </div>
     <div class="row mt-5 profiles">
-      {{#each profiles}} 
+       {{#each profiles}} 
         <div class="col-md-3">
         <img class='rounded-circle img-fluid' src={{profile_image}}>
         <p>{{profile_name}}</p>
@@ -29,6 +29,7 @@
              <form name="newProfile">
                <label for="profilename">Profile Name</label>
                <input type="text" name="profilename" id="profilename" placeholder="Name">
+
                <label for="profileImage">Profile Image</label>
                <input type="url" name="profileimage" id="profileimage" placeholder="Add a URL">
                <button type="submit" id="profile-submit">Add Profile</button>
@@ -41,5 +42,4 @@
       </div>
     </div>
   </div>
-   
-
+  <script src="/assets/js/members.js"></script>
