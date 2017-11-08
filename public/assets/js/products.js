@@ -34,8 +34,7 @@ $(function() {
            $("#dept").append("<option value='"+item.id+"'>"+item.dept_name+"</option>");
          });
        
-      }
-    );  
+      });
   }
 
   $(".create-form").on("submit", function(event) {
@@ -62,4 +61,3 @@ $(function() {
     );
   });
 });
-

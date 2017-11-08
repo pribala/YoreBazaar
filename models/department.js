@@ -7,10 +7,6 @@ module.exports = function(sequelize, DataTypes) {
     overhead_costs: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-    },
-    product_sale: {
-      type: DataTypes.DECIMAL,
-      defaultValue: 0
     }
   }, {
   // don't add the timestamp attributes (updatedAt, createdAt)
