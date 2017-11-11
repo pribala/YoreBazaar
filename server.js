@@ -40,6 +40,7 @@ require("./routes/department-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
+require("./routes/cart-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
