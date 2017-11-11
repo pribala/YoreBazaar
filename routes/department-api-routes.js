@@ -6,7 +6,6 @@
 
 // Requiring our models
 var db = require("../models");
-
 // Routes =============================================================
 module.exports = function(app) {
 
@@ -50,7 +49,6 @@ module.exports = function(app) {
       // We have access to the new department as an argument inside of the callback function
       res.json(dbDepartment);
     });
-
   });
 
   // DELETE route for deleting departments. We can get the id of the department to be deleted
@@ -65,7 +63,6 @@ module.exports = function(app) {
     .then(function(dbDepartment) {
       res.json(dbDepartment);
     });
-
   });
 
   // PUT route for updating departments. We can get the updated department data from req.body

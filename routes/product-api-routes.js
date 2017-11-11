@@ -21,7 +21,6 @@ module.exports = function(app) {
       };
       res.render("shop/products", hbsObject);
     });
-
   });
 
   // GET route for getting all of the products
@@ -81,52 +80,14 @@ module.exports = function(app) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbProduct);
     });
-
   });
-
-  // // DELETE route for deleting todos. We can get the id of the todo to be deleted
-  // // from req.params.id
-  // app.delete("/api/todos/:id", function(req, res) {
-  //   // Destroy takes in one argument: a "where object describing the todos we want to destroy
-  //   db.Todo.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   })
-  //   .then(function(dbTodo) {
-  //     res.json(dbTodo);
-  //   });
-
-
-  // });
-
-  // // PUT route for updating todos. We can get the updated todo data from req.body
-  // app.put("/api/todos", function(req, res) {
-  //   // Update takes in two arguments, an object describing the properties we want to update,
-  //   // and another "where" object describing the todos we want to update
-  //   db.Todo.update({
-  //     text: req.body.text,
-  //     complete: req.body.complete
-  //   }, {
-  //     where: {
-  //       id: req.body.id
-  //     }
-  //   })
-  //   .then(function(dbTodo) {
-  //     res.json(dbTodo);
-  //   });
-
-  // });
 
   //====================================================================================//
 // Cart logic
  // GET route for getting all products by department
   app.get("/shopping", function(req, res) {
-    //var profileId = localStorage.getItem('profile-name');
-    //var profile_id = req.params.id;
     // if (req.query.cartId) {
        var profile_id = req.query.cart_id;
-       console.log(profile_id+"pId");
     // }
     // findAll returns all entries for a table when used with no options
     db.Product.findAll({}).then(function(dbProduct) {
