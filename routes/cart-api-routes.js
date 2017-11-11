@@ -14,6 +14,7 @@ module.exports = function(app) {
     console.log(req.params.profile_id);
     db.Cart.findAll({
     	where: query,
+    	// attributes: { include: [[db.sequelize.fn('SUM', db.sequelize.col('price')), 'totalPrice']] },
       	include:[{model:db.Profile},
       	 {model: db.Product}]
     }).then(function(dbCart) {
