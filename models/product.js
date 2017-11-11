@@ -37,10 +37,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
     Product.hasMany(models.Cart);
-    Product.belongsToMany(models.Order, {through: 'OrderProduct'});
-
-    //Product.belongsToMany(models.Cart, {through: 'CartProduct'});
-   
+    Product.belongsToMany(models.Order, {through: 'OrderProduct'});   
   };
   return Product;
 };

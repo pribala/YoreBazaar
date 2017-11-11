@@ -1,7 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Cart = sequelize.define("Cart", {
-
-    quantity: {
+    cart_quantity: {
       type: DataTypes.INTEGER,
       defaultValue: 1
     },
@@ -14,9 +13,7 @@ module.exports = function(sequelize, DataTypes) {
           }
         });
         Cart.belongsTo(models.Product);
-       
-   };
- 
-  return Cart;
+  };
+   return Cart;
 };
 

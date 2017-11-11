@@ -37,7 +37,7 @@ app.set("view engine", "handlebars");
 // =============================================================
 require("./routes/product-api-routes.js")(app);
 require("./routes/department-api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+// require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
 require("./routes/cart-api-routes.js")(app);

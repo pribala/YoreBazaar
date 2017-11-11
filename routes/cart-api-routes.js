@@ -11,32 +11,30 @@ module.exports = function(app) {
     if (req.params.profile_id) {
       query.ProfileProfileId = req.params.profile_id;
     }
-    console.log(req.params.profile_id);
     db.Cart.findAll({
     	where: query,
       	include:[{model:db.Profile},
-      	 {model: db.Product}]
+      	 {model: db.Product}
+      	 ]
     }).then(function(dbCart) {
       //We have access to the products as an argument inside of the callback function
-
+      var total = 0;
+      dbCart.forEach(function(item){
+      	total+=item.cart_quantity * item.Product.price;
+      });
       var hbsObject = {
-        products: dbCart
+        products: dbCart,
+        total: total
       };
-      console.log(dbCart);
-      res.render("shop/cart", hbsObject);
+	res.render("shop/cart", hbsObject);
     });
-
   });
 
 
   // POST route for saving a new product
   app.post("/addtocart", function(req, res) {
     // create takes an argument of an object describing the item we want to insert
-    // into our table.
-     // db.CartProduct.create({
-     //  	CartId: dbCart.id,
-     //  	ProductId: req.body.product_id
-     //  });
+    // into our table. 
     db.Cart.create({
       ProductId: req.body.product_id,
       ProfileProfileId: req.body.profile_id
@@ -44,6 +42,5 @@ module.exports = function(app) {
       // We have access to the new todo as an argument inside of the callback function
        res.json(dbCart);
     });
-
   });
 };

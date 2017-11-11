@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
        },
     profile_image: {
         type: DataTypes.STRING,
-        allowNull: false,
+        defaultValue: "https://orig00.deviantart.net/0a2d/f/2010/282/d/4/aang___smile_by_viress-d30ezjd.jpg",
         validate: {
             isUrl: true
         }

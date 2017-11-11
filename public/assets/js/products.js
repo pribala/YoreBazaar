@@ -15,7 +15,6 @@ $(document).ready(function() {
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    console.log( $("#name").val().trim());
     var newProduct = {
       name: $("#name").val().trim(),
       price: parseFloat($("#price").val().trim()),

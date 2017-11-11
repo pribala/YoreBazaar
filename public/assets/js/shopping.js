@@ -1,13 +1,11 @@
 $(document).ready(function(){
 	var profileName = localStorage.getItem('profile-name');
-	$("#title").text("Hi "+profileName);
+	$("#title").text("Hey "+profileName+"!");
 
 	$(".cart-btn").click(function(e){
 		e.preventDefault();
 		var prod_id = $(this).data("id");
 		var profile_id = $("#profile-id").text();
-		console.log(prod_id);
-		console.log(profile_id);
 		var cartItem = {
 			product_id: prod_id,
 			profile_id: profile_id 

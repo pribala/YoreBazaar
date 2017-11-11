@@ -7,14 +7,14 @@
             <div class="col-xs-5">
                 <strong>{{ Product.product_name }}</strong>
                 <br/>
-                {{!-- <em>{{{Product.product_image}}}</em> --}}
                 <img class= "prodimg" src={{Product.product_image}} width="200rem">
             </div>
             <div class="col-xs-2 text-right mt-4">
                 <label>
-                    <input list="qty" name="myBrowser" value={{quantity}}>
-                    <span class="qty1">{{ quantity }}</span>
+                    <input list="qty" name="myBrowser" value={{cart_quantity}}>
+                    <span>{{total}}</span>
                 </label>
+                <br>
                 <datalist id="qty">
                     <option value="1">
                      <option value="2">
@@ -23,7 +23,6 @@
                     <option value="5">
                     <option value="6">
                 </datalist>
-
             </div>
             <div class="col-xs-3 text-right">
                 ${{ Product.price }}
@@ -37,7 +36,7 @@
     </ul>
 </div>
 <div class="text-right">
-    <strong>Total: {{ totalPrice }} $</strong>
+    <strong>Total: ${{ total }} </strong>
 </div>
 <hr>
 <div class="text-right">
