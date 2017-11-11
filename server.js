@@ -51,7 +51,7 @@ require("./routes/cart-api-routes.js")(app);
 // });
 db.sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
 .then(function(){
-    return db.sequelize.sync({ force: false });
+    return db.sequelize.sync({ force:true });
 })
 .then(function(){
     return db.sequelize.query('SET FOREIGN_KEY_CHECKS = 1')
