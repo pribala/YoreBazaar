@@ -1,18 +1,19 @@
 <h1>{{title}}</h1>
-{{!--    --}}
+{{# if products }}
 <div class="cart page">
     <ul class="list-group">
         {{# each products }}
         <li class="list-group-item clearfix">
             <div class="col-xs-5">
-                <strong>{{ this.product_name }}</strong>
+                <strong>{{ Product.product_name }}</strong>
                 <br/>
-                <em>{{{this.product_image}}}</em>
+                <em>{{{Product.product_image}}}</em>
+                <img class= "prodimg" src={{Product.product_image}} width="200rem">
             </div>
-            <div class="col-xs-2 text-right">
+            <div class="col-xs-2 text-right mt-4">
                 <label>
-                    <input list="qty" name="myBrowser" />
-                    <span class="qty1">{{ this.quantity }}</span>
+                    <input list="qty" name="myBrowser" value={{quantity}}>
+                    <span class="qty1">{{ quantity }}</span>
                 </label>
                 <datalist id="qty">
                     <option value="1">
@@ -25,10 +26,10 @@
 
             </div>
             <div class="col-xs-3 text-right">
-                ${{ this.price }}
+                ${{ Product.price }}
             </div>
             <div class="col-xs-2 text-right">
-                <a href="/remove/{{this.id}}" class="btn btn-default">
+                <a href="/remove/{{id}}" class="btn btn-default">
                     </i> Remove</a>
             </div>
         </li>
