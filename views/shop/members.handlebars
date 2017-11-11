@@ -1,10 +1,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+        <h2>Welcome <span class="member-name">{{user}}</span></h2>
       </div>
     </div>
     <div class="row mt-5 profiles">
+       {{#each profiles}} 
+        <div class="col-md-3">
+        <img class='rounded-circle img-fluid userProfile' data-id={{profile_id}} data-name={{profile_name}} src={{profile_image}}>
+        <p>{{profile_name}}</p>
+        </div>
+      {{/each}}
       <div class="col-md-3">
         <button class="btn add-profile"><i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></button>
       </div>
@@ -36,3 +42,4 @@
       </div>
     </div>
   </div>
+  <script src="/assets/js/members.js"></script>

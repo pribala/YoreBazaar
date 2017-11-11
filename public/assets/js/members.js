@@ -4,23 +4,34 @@ $(document).ready(function() {
   var user_email = "";
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
-    user_email = $(".member-name").text();
+    user_email = data.email;
   });
  
+ $(".userProfile").click(function(e){
+  e.preventDefault();
+  var cartId = $(this).data("id");
+  var name = $(this).data("name");
   
-  $.get("/profiles" + user_email, function(data) {
-  	console.log(user_email);
-  	console.log(data);
-  if (data.length !== 0) {
-    for (var i = 0; i < data.length; i++) {
-      	var col = $("<div>");
-     	col.addClass("col-md-3");
-    	col.append("<img class='rounded-circle img-fluid' src='"+data[i].profile_image+"'>");
-    	col.append("<p>"+data[i].profile_name+"</p>");
-    	$(".profiles").prepend(col);
-    }
-  	}
-  });
+  // Store profile id in the local storage
+  // localStorage.setItem('profile-id', cartId);
+  localStorage.setItem('profile-name', name);
+  cartId = "/?cart_id=" + cartId;
+  window.location.href="/shopping"+cartId;
+ });
+  
+  // $.get("/profiles" + user_email, function(data) {
+  // 	console.log(user_email);
+  // 	console.log(data);
+  // if (data.length !== 0) {
+  //   for (var i = 0; i < data.length; i++) {
+  //     	var col = $("<div>");
+  //    	col.addClass("col-md-3");
+  //   	col.append("<img class='rounded-circle img-fluid' src='"+data[i].profile_image+"'>");
+  //   	col.append("<p>"+data[i].profile_name+"</p>");
+  //   	$(".profiles").prepend(col);
+  //   }
+  // 	}
+  // });
 
   $(".add-profile").click(function(e){
   	e.preventDefault();
@@ -42,12 +53,13 @@ $(document).ready(function() {
 
     $.post("/api/profile",profileData).done(function(data){
     	//window.location.replace(data);
-    	console.log("hi");
-    	var col = $("<div>");
-    	col.addClass("col-md-3");
-    	col.append("<img class='rounded-circle img-fluid' src='"+data.profile_image+"'>");
-    	col.append("<p>"+data.profile_name+"</p>");
-    	$(".profiles").prepend(col);
+      location.reload();
+    	// console.log("hi");
+    	// var col = $("<div>");
+    	// col.addClass("col-md-3");
+    	// col.append("<img class='rounded-circle img-fluid' src='"+data.profile_image+"'>");
+    	// col.append("<p>"+data.profile_name+"</p>");
+    	// $(".profiles").prepend(col);
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);

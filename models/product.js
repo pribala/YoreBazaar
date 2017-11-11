@@ -36,10 +36,11 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-
+    Product.hasMany(models.Cart);
     Product.belongsToMany(models.Order, {through: 'OrderProduct'});
 
-    Product.belongsToMany(models.Cart, {through: 'CartProduct'});
+    //Product.belongsToMany(models.Cart, {through: 'CartProduct'});
+   
   };
   return Product;
 };

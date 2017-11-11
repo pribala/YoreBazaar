@@ -97,6 +97,7 @@ module.exports = function(app) {
   //     res.json(dbTodo);
   //   });
 
+
   // });
 
   // // PUT route for updating todos. We can get the updated todo data from req.body
@@ -116,4 +117,25 @@ module.exports = function(app) {
   //   });
 
   // });
+
+  //====================================================================================//
+// Cart logic
+ // GET route for getting all products by department
+  app.get("/shopping", function(req, res) {
+    //var profileId = localStorage.getItem('profile-name');
+    //var profile_id = req.params.id;
+    // if (req.query.cartId) {
+       var profile_id = req.query.cart_id;
+       console.log(profile_id+"pId");
+    // }
+    // findAll returns all entries for a table when used with no options
+    db.Product.findAll({}).then(function(dbProduct) {
+      //We have access to the products as an argument inside of the callback function
+      var hbsObject = {
+        products: dbProduct,
+        profile_id: profile_id
+      };
+      res.render("shop/shopping", hbsObject);
+    });
+  });
 };
