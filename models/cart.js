@@ -1,10 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Cart = sequelize.define("Cart", {
-    // product_id: {
-    // 	type: DataTypes.INTEGER,
-    // 	allowNull : false
-    // },
-    quantity: {
+    cart_quantity: {
       type: DataTypes.INTEGER,
       defaultValue: 1
     },
@@ -19,9 +15,7 @@ module.exports = function(sequelize, DataTypes) {
           }
         });
         Cart.belongsTo(models.Product);
-        //Cart.belongsToMany(models.Product, {through: 'CartProduct'});
-   };
- 
-  return Cart;
+  };
+   return Cart;
 };
 

@@ -19,17 +19,15 @@ $(function() {
   $("#edit").on("click", function(event) {
     event.preventDefault();
     var id = $(this).data("id");
-    // Send the delete request.
-    
+    // Send the delete request. 
   });
 
   $(".create-department").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    console.log( $("#name").val().trim());
     var newDepartment = {
-      name: $("#name").val().trim(),
-      cost: parseFloat($("#cost").val().trim()),
+    name: $("#name").val().trim(),
+    cost: parseFloat($("#cost").val().trim()),
     };
 
     // Send the POST request.
