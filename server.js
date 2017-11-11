@@ -40,11 +40,23 @@ require("./routes/department-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
-
+require("./routes/cart-api-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
+// db.sequelize.sync({ force: true }).then(function() {
+//   app.listen(PORT, function() {
+//     console.log("App listening on PORT " + PORT);
+//   });
+// });
+db.sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
+.then(function(){
+    return db.sequelize.sync({ force: true });
+})
+.then(function(){
+    return db.sequelize.query('SET FOREIGN_KEY_CHECKS = 1')
+})
+.then(function(){
+     app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });

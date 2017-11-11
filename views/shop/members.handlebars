@@ -7,7 +7,7 @@
     <div class="row mt-5 profiles">
        {{#each profiles}} 
         <div class="col-md-3">
-        <img class='rounded-circle img-fluid' src={{profile_image}}>
+        <img class='rounded-circle img-fluid userProfile' data-id={{profile_id}} data-name={{profile_name}} src={{profile_image}}>
         <p>{{profile_name}}</p>
         </div>
       {{/each}}

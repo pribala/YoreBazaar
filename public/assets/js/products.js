@@ -7,7 +7,7 @@ $(document).ready(function() {
       if(Object.getOwnPropertyNames(data).length === 0){
         window.location.replace("/loginpage");
       }else {
-        window.location.replace("/members");
+        window.location.replace("/profiles/"+data.email);
       }
     });
   });    
