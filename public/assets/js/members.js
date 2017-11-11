@@ -6,7 +6,26 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
     user_email = data.email;
   });
- 
+
+  $("#memberid").click(function(e){
+    e.preventDefault();
+   //  var  cartId = "/?id=" + user_email;
+   //   window.location.href="/profiles"+cartId;
+  //  $.post("/api/login", function(data) {
+  //    window.location.href="/shopping"+cartId;
+  //  });
+  // $.post("/api/login", {
+  //   email: user_email,
+  //   password: password
+  // }).then(function(data) {
+  //   window.location.replace(data);
+  //   // If there's an error, log the error
+  // }).catch(function(err) {
+  //   console.log(err);
+  // });
+  
+    });
+
  $(".userProfile").click(function(e){
   e.preventDefault();
   var cartId = $(this).data("id");
