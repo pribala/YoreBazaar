@@ -28,8 +28,10 @@
                 ${{ Product.price }}
             </div>
             <div class="col-xs-2 text-right">
-                <a href="/remove/{{id}}" class="btn btn-default">
+                <a href="#" class="btn btn-default delete" data-id={{id}}>
                     </i> Remove</a>
+                <a href="#" class="btn btn-default update" data-id={{id}}>
+                    </i> Update</a>    
             </div>
         </li>
         {{/each}}
@@ -40,6 +42,8 @@
 </div>
 <hr>
 <div class="text-right">
-    <a href="#" type="button" class="btn btn-success">Checkout</a>
+    <a href="#" type="button" class="btn btn-success shop" data-id= {{Profile.ProfileProfileId}}>Shop</a>
+    <a href="#" type="button" class="btn btn-success checkout">Checkout</a>
+    <a href="#" type="button" class="btn btn-success clear">Clear</a>
 </div>
 {{ else }} Your shopping cart is empty. {{/if}}

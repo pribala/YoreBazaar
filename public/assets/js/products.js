@@ -10,8 +10,8 @@ $(document).ready(function() {
         window.location.replace("/profiles/"+data.email);
       }
     });
-  });    
- 
+  });  
+   
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
