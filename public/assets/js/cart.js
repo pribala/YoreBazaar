@@ -14,7 +14,24 @@ $(document).ready(function(){
 	$(".update").click(function(e){
 		e.preventDefault();
 		// update cart item
-	});
+		console.log($("#sell").val());
+		var qty = $("#sell").val();
+		var cartData = {
+      		quantity: qty,
+      		id: $(this).data("id")
+    	};
+	   
+	    // Send the PUT request.
+	    $.ajax("/api/cart", {
+	      type: "PUT",
+	      data: cartData
+	      }).then(
+	      function() {
+	        console.log("updated item");
+	        // Reload the page to get the updated profile
+	        location.reload();
+	      });
+    });
 
 	$(".shop").click(function(e){
 		e.preventDefault();
