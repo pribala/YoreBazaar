@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 	$(".checkout").click(function(e){
 		e.preventDefault();
-		// add items on cart to orders
+	document.write("thanks for shopping with us!!")
 	});
 
 	$(".clear").click(function(e){

@@ -64,12 +64,16 @@ $(document).ready(function() {
 
   $(".upd-profile").click(function(e){
     e.preventDefault();
+    var id = $(this).data("id");
     // update the profile
-    $('#profileInfo').modal('toggle');
-    $("#profileimage").val($(".userProfile").attr("src"));
-    $("#profilename").val($("#user-name").text());
-    $("#profile-submit").prop('disabled', true);
-    $("#profile-update").prop('disabled', false);
+    $.get("/api/member/"+id).then(function(data){
+      $('#profileInfo').modal('toggle');
+      $("#profileimage").val(data.profile_image);
+      $("#profilename").val(data.profile_name);
+      $("#profile-submit").prop('disabled', true);
+      $("#profile-update").prop('disabled', false);
+      $("#profile-update").data("id", data.profile_id);
+    });
   });
 
    $("#profile-update").click(function(e){
@@ -78,7 +82,7 @@ $(document).ready(function() {
       name: $("#profilename").val().trim(),
       image: $("#profileimage").val().trim(),
       username:$(".member-name").text().trim(),
-      id: $(".userProfile").data("id")
+      id: $(this).data("id")
     };
     if (!profileData.name) {
       return;
@@ -100,5 +104,3 @@ $(document).ready(function() {
     $("#profileimage").val("");
   }); 
 });
-
-

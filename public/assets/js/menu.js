@@ -21,8 +21,9 @@ $(document).ready(function() {
 	      }).then(function(result) {
 	      	console.log(result);
 	          result.forEach(function(item){
-	           $(".cartItems").append("<img class='prodimg' height='30rem' width='30rem' src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>$"+item.Product.price+"<br>Qty: "+item.cart_quantity);
-	         });
+	        //    $(".cartItems").append("<img class='prodimg' width='30rem' style='height:30px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>$"+item.Product.price+"<br>Qty: "+item.cart_quantity);
+			$(".cartItems").append("<img class='prodimg rounded-circle ' width='50rem' style='height:50px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"</br>");
+		});
 	    });
 	        });
 	    });
