@@ -9,8 +9,10 @@
         <div class="col-md-3">
         <img class='rounded-circle img-fluid userProfile' data-id={{profile_id}} data-name={{profile_name}} src={{profile_image}}>
         <p id="user-name">{{profile_name}}</p>
-        <button class="btn del-profile" data-id={{profile_id}}><i class="fa fa-trash" aria-hidden='true'></i></button>
-        <button class="btn upd-profile" data-id={{profile_id}}><i class="fa fa-pencil" aria-hidden="true"></i></button>
+
+        <button class="btn del-profile" data-id={{profile_id}}><i class='fa fa-trash' aria-hidden='true'></i></button>
+        <button class="btn upd-profile" data-id={{profile_id}}><i class='fa fa-pencil' aria-hidden='true'></i></button>
+
         </div>
       {{/each}}
       <div class="col-md-3">
@@ -31,11 +33,13 @@
              <form name="newProfile">
                <h5><label for="profilename">Profile Name</label></h5>
                <input type="text" name="profilename" id="profilename" placeholder="Name">
+
                 </br>
                <h5><label for="profileImage">Profile Image</label></h5>
                <input type="url" name="profileimage" id="profileimage" value="https://orig00.deviantart.net/0a2d/f/2010/282/d/4/aang___smile_by_viress-d30ezjd.jpg"placeholder="Add a URL">
                <button type="submit" class="btn btn-primary" id="profile-submit">Add Profile</button>
                <button type="submit" class="btn btn-primary" id="profile-update">Update Profile</button>
+
               </form>
           </div>
           <div class="modal-footer">
