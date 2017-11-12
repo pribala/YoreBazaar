@@ -1,0 +1,32 @@
+<h1>{{title}}</h1>
+{{# if products }}
+<div class="cart page">
+    <ul class="list-group">
+        {{# each order }}
+        <li class="list-group-item clearfix">
+            <div class="col-sm-5">
+                <strong>{{ order.product_name }}</strong>
+                <br/>
+                <img class="prodimg" src={{order.product_image}} class="rounded img-fluid" width="200rem">
+            </div>
+    
+            <br>
+            <div class="col-sm-2 text-right mt-4" >
+                {{ order.Order.quantity}}
+            </div>
+             <div class="col-sm-2 text-right mt-4" >
+                ${{ order.Product.price }}
+            </div>
+             <div class="col-sm-2 text-right mt-4" >
+                ${{ order.Order.order_date}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+<div class="text-right">
+    <strong>Total: ${{ total }} </strong>
+</div>
+<hr>
+
+{{ else }} You have no orders !! {{/if}}

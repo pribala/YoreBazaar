@@ -36,19 +36,22 @@
                 <a class="nav-link dropdown-toggle " href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profiles</a>
 
                 <div class="dropdown-menu members" aria-labelledby="dropdown02">
-                        {{!-- <a class="dropdown-item col-sm-5" href="#">
-                            <img src="https://images.freeimages.com/images/small-previews/2fe/butterfly-1390152.jpg" class="rounded-circle img-fluid profile-image"
-                                style=" width: 60px; height: 30px;"> Username</a> --}}
+                    {{!--
+                    <a class="dropdown-item col-sm-5" href="#">
+                        <img src="https://images.freeimages.com/images/small-previews/2fe/butterfly-1390152.jpg" class="rounded-circle img-fluid profile-image"
+                            style=" width: 60px; height: 30px;"> Username</a> --}}
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Orders</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> Cart
-                    <span class="sr-only">(current)</span>
-                </a>
+        <li class="nav-item  active dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> Cart
+                <span class="sr-only">(current)</span></a>
+                <div class="dropdown-menu cartItems" aria-labelledby="dropdown02">
+                  
+                </div>
             </li>
         </ul>
 </nav>

@@ -63,4 +63,36 @@ module.exports = function(app) {
       res.json(dbProfile);
     });
   });
+
+  // DELETE route for deleting items from the profile. We can get the id of the profile to be deleted
+  // from req.params.id
+  app.delete("/api/profile/:id", function(req, res) {
+    // Destroy takes in one argument: a "where object describing the item we want to destroy
+    db.Profile.destroy({
+      where: {
+        profile_id: req.params.id
+      }
+    })
+    .then(function(dbProfile) {
+      res.json(dbProfile);
+    });
+  });
+
+  // PUT route for updating cart. We can get the updated cart data from req.body
+  app.put("/api/profile", function(req, res) {
+    // Update takes in two arguments, an object describing the properties we want to update,
+    // and another "where" object describing the profile we want to update
+    db.Profile.update({
+      profile_name: req.body.name,
+      profile_image: req.body.image,
+      UserEmail: req.body.username,
+    }, {
+      where: {
+        profile_id: req.body.id
+      }
+    })
+    .then(function(dbProfile) {
+      res.json(dbProfile);
+    });
+  });
 };
