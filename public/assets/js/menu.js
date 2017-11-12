@@ -19,14 +19,22 @@ $(document).ready(function() {
         $.ajax("/api/cart/"+profileId, {
 	      type: "GET",
 	      }).then(function(result) {
-	      	console.log(result);
-	          result.forEach(function(item){
+	      	   console.log(result);	
+	      	   result.forEach(function(item){
 	           $(".cartItems").append("<img class='prodimg' width='200rem' src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>$"+item.Product.price+"<br>Qty: "+item.cart_quantity);
 	         });
-	    });
-	        });
+	    	});
+	       });
 	    });
 	}); 
+
+	$(".navItem").click(function(e){
+		$.get("/api/user_data").then(function(data) {
+			if(Object.getOwnPropertyNames(data).length === 0){
+				window.location.replace("/loginpage");
+	   		}
+		});			
+	});
 
 	// $(".cart").click(function(e){
  //    e.preventDefault();
