@@ -18,8 +18,8 @@ $(document).ready(function(){
 
 	$(".shop").click(function(e){
 		e.preventDefault();
-		var profileId = $(this).data("id");
-		//$.get("/shopping/?cart_id="+profileId)
+		var profileId = localStorage.getItem("profile-id");
+		//console.log(profileId+"pId");
 		window.location.href="/shopping/?cart_id="+profileId;
 	});
 
