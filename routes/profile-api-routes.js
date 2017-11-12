@@ -10,7 +10,7 @@ var passport = require("../config/passport");
 // Routes =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the users
+  // GET route for getting all of the profiles for a user
   app.get("/api/members", function(req, res) {
     // findAll returns all entries for a table when used with no options
     var query = {};
@@ -20,6 +20,21 @@ module.exports = function(app) {
     query.UserEmail = req.query.email;
     db.Profile.findAll({where: query,
       include:[db.User]
+    }).then(function(dbProfile) {
+      //We have access to the user as an argument inside of the callback function
+      res.json(dbProfile);
+    });
+  });
+
+  // GET route for getting one particular profile
+  app.get("/api/member/:id", function(req, res) {
+    // findOne returns one entry for a table based on the id given
+    var query = {};
+    // if (req.query.user_email) {
+    //   
+    // }
+    query.profile_id = req.params.id;
+    db.Profile.findOne({where: query
     }).then(function(dbProfile) {
       //We have access to the user as an argument inside of the callback function
       res.json(dbProfile);
