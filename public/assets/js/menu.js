@@ -13,8 +13,14 @@ $(document).ready(function() {
 	      }).then(function(result) {
 	      	console.log(result);
 	          result.forEach(function(item){
-	           $(".members").append("<a class='dropdown-item' href='/products/"+item.id+"'>"+item.profile_name+"</a>");
-	         });
-	      });
+							var img=item.profile_image;
+							console.log(item);
+						$(".members").append("<a class='dropdown-item col-sm-5' href='/products/"+item.id+"'> "+item.profile_name+"</a>");
+				// 	 $(".members").append('<img src=img class="rounded-circle img-fluid profile-image" height="64px" width="64px">');
+	       });
 	    });  
 });      
+});
+/* <a class="dropdown-item col-sm-5" href="#">
+<img src="https://images.freeimages.com/images/small-previews/2fe/butterfly-1390152.jpg" class="rounded-circle img-fluid profile-image"
+		style=" width: 60px; height: 30px;"> Username</a> */

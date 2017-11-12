@@ -16,30 +16,45 @@
       </div>
     </div>
     <!-- Modal -->
+    <div class="container-fluid" id="myModal" >
     <div class="modal fade" id="profileInfo" tabindex="-1" role="dialog" aria-labelledby="matchInfoTitle" aria-hidden="true">
-      <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-dialog " role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="profileTitle">Add Profile</h5>
+            <h4 class="modal-title" id="profileTitle">Add Profile</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
              <form name="newProfile">
-               <label for="profilename">Profile Name</label>
-               <input type="text" name="profilename" id="profilename" placeholder="Name">
-
-               <label for="profileImage">Profile Image</label>
-               <input type="url" name="profileimage" id="profileimage" placeholder="Add a URL">
-               <button type="submit" id="profile-submit">Add Profile</button>
+               <div class="form-group">
+              {{!-- <label for="profilename">Profile Name</label> --}}
+              <h5>Profile Name
+               <input type="text" name="profilename" id="profilename" placeholder="Name"></h5>
+               </div>
+               <div class="form-group">
+               {{!-- <label for="profileImage">Profile Image</label> --}}
+               <h5>Profile Image
+               <input type="url" name="profileimage" id="profileimage" value="https://orig00.deviantart.net/0a2d/f/2010/282/d/4/aang___smile_by_viress-d30ezjd.jpg">
+               </h5>
+                </div>
+              
               </form>
           </div>
           <div class="modal-footer">
+             <button type="submit" class="btn btn-primary"  id="profile-submit">Add Profile</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
+  </div>
   <script src="/assets/js/members.js"></script>
+  <script>
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+ </script>

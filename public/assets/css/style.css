@@ -22,6 +22,7 @@ button{
 .btn{
 margin-top:20px;
 }
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -34,10 +35,13 @@ html {
   }
   .footer {
     position: absolute;
-    bottom: 0;   /* Set the fixed height of the footer here */
+    bottom: 0; 
+      /* Set the fixed height of the footer here */
    height: 15rem;
     width:100%;
+    margin-bottom: 0px;
   }
+  
   footer {
     padding-top: 30px;
     background-color: #292c2f;

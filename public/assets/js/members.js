@@ -45,6 +45,7 @@ $(document).ready(function() {
     $("#profilename").val("");
     $("#profileimage").val("");
   }); 
+
 });
 
 
