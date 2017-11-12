@@ -7,8 +7,14 @@ form.login {
  height: 150px;
   margin-top: 20px;
   display:inline-block;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
+.cartimg{
+  height: 150px;
+   margin-top: 20px;
+   display:inline-block;
+ border: 1px solid black; 
+ }
  p{
   margin: 0px;
   text-align:center; 

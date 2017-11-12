@@ -22,13 +22,19 @@ $(document).ready(function() {
 	      	console.log(result);
 	          result.forEach(function(item){
 	        //    $(".cartItems").append("<img class='prodimg' width='30rem' style='height:30px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>$"+item.Product.price+"<br>Qty: "+item.cart_quantity);
-			$(".cartItems").append("<img class='prodimg rounded-circle ' width='50rem' style='height:50px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"</br>");
+			$(".cartItems").append("<img class='cartimg rounded-circle ' width='50rem' style='height:50px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"</br>");
 		});
 	    });
 	        });
 	    });
 	}); 
-
+	$(".navItem").click(function(e){
+		$.get("/api/user_data").then(function(data) {
+			if(Object.getOwnPropertyNames(data).length === 0){
+				window.location.replace("/loginpage");
+	   		}
+		});			
+	});
 	// $(".cart").click(function(e){
  //    e.preventDefault();
  //    $.get("/api/user_data").then(function(data) {
