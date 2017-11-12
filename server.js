@@ -37,7 +37,6 @@ app.set("view engine", "handlebars");
 // =============================================================
 require("./routes/product-api-routes.js")(app);
 require("./routes/department-api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
 require("./routes/cart-api-routes.js")(app);
@@ -51,7 +50,7 @@ require("./routes/order-api-routes.js")(app);
 // });
 db.sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
 .then(function(){
-    return db.sequelize.sync({ force:false});
+    return db.sequelize.sync({ force:true});
 })
 .then(function(){
     return db.sequelize.query('SET FOREIGN_KEY_CHECKS = 1')
