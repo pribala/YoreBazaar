@@ -7,8 +7,6 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Cart.associate = function(models) {
-        // We're saying that a Cart should belong to a Profile
-        // A Cart can't be created without a Profile due to the foreign key constraint
         Cart.belongsTo(models.Profile, {
           foreignKey: {
             allowNull: false

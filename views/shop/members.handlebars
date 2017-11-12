@@ -1,4 +1,4 @@
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name">{{user}}</span></h2>
@@ -8,7 +8,9 @@
        {{#each profiles}} 
         <div class="col-md-3">
         <img class='rounded-circle img-fluid userProfile' data-id={{profile_id}} data-name={{profile_name}} src={{profile_image}}>
-        <p>{{profile_name}}</p>
+        <p id="user-name">{{profile_name}}</p>
+        <button class="btn del-profile" data-id={{profile_id}}><i class="fa fa-trash" aria-hidden='true'></i></button>
+        <button class="btn upd-profile" data-id={{profile_id}}><i class="fa fa-pencil" aria-hidden="true"></i></button>
         </div>
       {{/each}}
       <div class="col-md-3">
@@ -20,23 +22,24 @@
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="profileTitle">Add Profile</h5>
+            <h4 class="modal-title" id="profileTitle">Add Profile</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
              <form name="newProfile">
-               <label for="profilename">Profile Name</label>
+               <h5><label for="profilename">Profile Name</label></h5>
                <input type="text" name="profilename" id="profilename" placeholder="Name">
-
-               <label for="profileImage">Profile Image</label>
-               <input type="url" name="profileimage" id="profileimage" placeholder="Add a URL">
-               <button type="submit" id="profile-submit">Add Profile</button>
+                </br>
+               <h5><label for="profileImage">Profile Image</label></h5>
+               <input type="url" name="profileimage" id="profileimage" value="https://orig00.deviantart.net/0a2d/f/2010/282/d/4/aang___smile_by_viress-d30ezjd.jpg"placeholder="Add a URL">
+               <button type="submit" class="btn btn-primary" id="profile-submit">Add Profile</button>
+               <button type="submit" class="btn btn-primary" id="profile-update">Update Profile</button>
               </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

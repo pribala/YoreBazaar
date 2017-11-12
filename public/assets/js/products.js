@@ -1,4 +1,4 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
+/ Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
   
   $(".cart-btn").click(function(e){
@@ -10,8 +10,8 @@ $(document).ready(function() {
         window.location.replace("/profiles/"+data.email);
       }
     });
-  });    
- 
+  });  
+   
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -35,4 +35,3 @@ $(document).ready(function() {
     );
   });
 });
-
