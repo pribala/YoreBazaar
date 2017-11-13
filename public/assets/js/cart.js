@@ -11,11 +11,13 @@ $(document).ready(function(){
 	    });
 	});
 
+	var qty = 0;
+	$(".sell").change(function(){
+		qty = $(this).val();
+	});
+
 	$(".update").click(function(e){
 		e.preventDefault();
-		// update cart item
-		console.log($("#sell").val());
-		var qty = $("#sell").val();
 		var cartData = {
       		quantity: qty,
       		id: $(this).data("id")
