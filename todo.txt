@@ -1,0 +1,52 @@
+Things to do
+Test cases using mocha
+flash messages
+add google auth in passport
+
+
+For Cart
+Cart button on navbar displays cart items (fix the style)
+cart button on shopping page adds item to cart
+cart button on products page redirects to login page
+Cart api routes ( delete and update)
+For update
+change quantity and update
+
+Checkout button on cart page adds item to orders table
+fields to add
+profileid
+quantity
+date
+in orderproducts table
+product id
+cart id
+then display a page with the order details for that date
+
+For now, redirect to a page with "Thanks for shopping. Your order total is $".
+Then if time add order table functionality
+
+Shop button redirects to shopping page
+clear cart button clears the cart (?)
+
+Main Page
+Display products
+Login
+Signup
+User details
+List products by department
+Order button - shows all orders for a particular profile
+
+Profile page
+Add profile
+Style the modal
+Delete and update profile
+Possibly limit no of profiles
+
+
+Enhancement
+add admin page
+manage users
+manage products
+manage departments
+
+

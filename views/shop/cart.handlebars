@@ -28,6 +28,7 @@
                     </i>Remove</a>
                     <a href="#" class="btn btn-default update" data-id={{id}}>
                </i> Update</a> 
+
             </div>
         </li>
         {{/each}}
@@ -38,9 +39,10 @@
 </div>
 <hr>
 <div class="text-right">
-    <a href="#" type="button" class="btn btn-success shop" data-id= {{Profile.ProfileProfileId}}>Shop</a>
+    <a href="#" type="button" class="btn btn-success shop">Shop</a>
     <a href="#" type="button" class="btn btn-success checkout">Checkout</a>
     <a href="#" type="button" class="btn btn-success clear">Clear</a>
 </div>
 {{ else }} Your shopping cart is empty. {{/if}}
-  <script src="/assets/js/cart.js"></script>
+<script src="/assets/js/cart.js"></script>
+
