@@ -31,7 +31,7 @@ $(document).ready(function() {
 			if(Object.getOwnPropertyNames(data).length === 0){
 				window.location.replace("/loginpage");
 	   		}else {
-	   			var profileId = localStorage.getItem("profile-id");
+	   			var profileId = sessionStorage.getItem("profile-id");
 		      	$.ajax("/api/cart/"+profileId, {
 			      type: "GET",
 			    }).then(function(result) {

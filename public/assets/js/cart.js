@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 	$(".shop").click(function(e){
 		e.preventDefault();
-		var profileId = localStorage.getItem("profile-id");
+		var profileId = sessionStorage.getItem("profile-id");
 		//console.log(profileId+"pId");
 		window.location.href="/shopping/?cart_id="+profileId;
 	});
@@ -45,8 +45,20 @@ $(document).ready(function(){
 	$(".checkout").click(function(e){
 		e.preventDefault();
 		// add items on cart to orders
-	});
+		// bulk insert, get all the product ids from cart, create an array of objects
+		var orderData = {
+	      profileId: sessionStorage.getItem("profile-id"),
+	      productId: $("#profileimage").val().trim(),
+	      quantity:$(".member-name").text().trim()
+	    };
 
+	    $.post("/api/order",orderData).done(function(data){
+	    	window.location.href="/";
+	    }).catch(function(err) {
+	      console.log(err);
+	    });
+   	}); 
+   
 	$(".clear").click(function(e){
 		e.preventDefault();
 		// clear the cart

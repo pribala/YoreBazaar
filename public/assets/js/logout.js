@@ -1,1 +1,1 @@
-localStorage.clear();
+sessionStorage.clear();
