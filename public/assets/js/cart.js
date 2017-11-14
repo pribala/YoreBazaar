@@ -52,17 +52,15 @@ $(document).ready(function(){
 	      productId: $("#profileimage").val().trim(),
 	      quantity:$(".member-name").text().trim()
 	    };
+		document.write("thanks for shopping with us!!")
+	//});
 
-	document.write("thanks for shopping with us!!")
-	});
-
-
-	    $.post("/api/order",orderData).done(function(data){
-	    	window.location.href="/";
-	    }).catch(function(err) {
-	      console.log(err);
-	    });
-   	}); 
+		$.post("/api/order",orderData).done(function(data){
+		   	window.location.href="/";
+		}).catch(function(err) {
+		      console.log(err);
+		});
+	}); 
    
 	$(".clear").click(function(e){
 		e.preventDefault();
