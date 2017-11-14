@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	var profileName = sessionStorage.getItem('profile-name');
-	$("#title").text("Hey "+profileName+"!");
+	//var profileName = sessionStorage.getItem('profile-name');
+	//$("#title").text("Hey "+profileName+"!");
 
 	$(".cart-btn").click(function(e){
 		e.preventDefault();
