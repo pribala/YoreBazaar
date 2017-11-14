@@ -8,8 +8,7 @@
        {{#each profiles}} 
         <div class="col-md-3">
         <img class='rounded-circle img-fluid userProfile' data-id={{profile_id}} data-name={{profile_name}} src={{profile_image}}>
-        <p>{{profile_name}}</p>
-
+        <h4 class="proname">{{profile_name}}</h4>
         <button class="btn del-profile" data-id={{profile_id}}><i class='fa fa-trash' aria-hidden='true'></i></button>
         <button class="btn upd-profile" data-id={{profile_id}}><i class='fa fa-pencil' aria-hidden='true'></i></button>
 

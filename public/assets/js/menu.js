@@ -37,7 +37,7 @@ $(document).ready(function() {
 			      type: "GET",
 			    }).then(function(result) {
 			        result.forEach(function(item){
-			           $(".cartItems").append("<img class='prodimg' width='200rem' src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>$"+item.Product.price+"<br>Qty: "+item.cart_quantity);
+			           $(".cartItems").append("<img class='cartimg rounded-circle ' width='50rem' style='height:50px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>Price: $"+item.Product.price+"<br>Qty: "+item.cart_quantity+"<br>");
 			        });
 			    });
 			}
