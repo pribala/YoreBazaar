@@ -34,4 +34,25 @@ $(document).ready(function() {
     });
   }
 
-});
+  //routes for facebook authentication
+//   app.get('/auth/facebook',
+//   passport.authenticate('facebook'));
+
+// app.get('/auth/facebook/callback',
+//   passport.authenticate('facebook', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/');
+//   });
+
+ });
+
+
+//code for fbAuth.js file
+// module.exports={
+//   'facebookAuth':{
+//     clientID: '129826237661655',
+//       clientSecret: '70ebafe74b4e8b4027bc8c3cc798b740',
+//       callbackURL: 'http://localhost:3000/auth/facebook/callback'
+//   }
+// }
