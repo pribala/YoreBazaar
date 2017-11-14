@@ -11,7 +11,7 @@ $(document).ready(function(){
 	    });
 	});
 
-	var qty = 0;
+	var qty =1 ;
 	$(".sell").change(function(){
 		qty = $(this).val();
 	});
