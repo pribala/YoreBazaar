@@ -68,4 +68,4 @@ $(document).ready(function(){
 		e.preventDefault();
 		// clear the cart
 	});
-});
+}
