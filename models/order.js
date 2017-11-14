@@ -1,9 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Order = sequelize.define("Order", {
-    quantity: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
-    },
     order_date: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
