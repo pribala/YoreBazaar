@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var profileName = localStorage.getItem('profile-name');
+	var profileName = sessionStorage.getItem('profile-name');
 	$("#title").text("Hey "+profileName+"!");
 
 	$(".cart-btn").click(function(e){

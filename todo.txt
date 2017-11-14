@@ -49,4 +49,11 @@ manage users
 manage products
 manage departments
 
+Imp
+change localStorage to sessionStorage
+host on heroku
+
+
+
+
 

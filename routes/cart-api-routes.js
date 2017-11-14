@@ -12,13 +12,17 @@ module.exports = function(app) {
     }
     db.Cart.findAll({
     	where: query,
-      	include:[{model:db.Profile},
+        //attributes: {include: [[db.sequelize.literal('cart_quantity * price'), 'tot']]},
+        attributes: {include: [[db.sequelize.condition(db.sequelize.col('cart_quantity'), '*', db.sequelize.col('price')),'tot']]},
+        include:[{model:db.Profile},
       	 {model: db.Product}
       	 ]
     }).then(function(dbCart) {
       //We have access to the products as an argument inside of the callback function
+      console.log(dbCart);
       var total = 0;
       dbCart.forEach(function(item){
+        console.log(item.tot);
       	total+=item.cart_quantity * item.Product.price;
       });
       var hbsObject = {

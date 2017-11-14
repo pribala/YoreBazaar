@@ -13,8 +13,8 @@ $(document).ready(function() {
   var name = $(this).data("name");
   
   // Store profile id in the local storage
-  localStorage.setItem('profile-id', cartId);
-  localStorage.setItem('profile-name', name);
+  sessionStorage.setItem('profile-id', cartId);
+  sessionStorage.setItem('profile-name', name);
   cartId = "/?cart_id=" + cartId;
   window.location.href="/shopping"+cartId;
  });

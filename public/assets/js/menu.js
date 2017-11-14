@@ -11,23 +11,12 @@ $(document).ready(function() {
 		$.ajax("/api/members/?email="+data.email, {
 	      type: "GET",
 	      }).then(function(result) {
-	      	console.log(result);
-	          result.forEach(function(item){
+	      	   result.forEach(function(item){
 	           $(".members").append("<a class='dropdown-item' href='/profiles/"+item.UserEmail+"'>"+item.profile_name+"</a>");
-	        	var profileId = localStorage.getItem("profile-id");
-      	console.log(profileId);
-        $.ajax("/api/cart/"+profileId, {
-	      type: "GET",
-	      }).then(function(result) {
-	      	console.log(result);
-	          result.forEach(function(item){
-	        //    $(".cartItems").append("<img class='prodimg' width='30rem' style='height:30px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>$"+item.Product.price+"<br>Qty: "+item.cart_quantity);
-			$(".cartItems").append("<img class='cartimg rounded-circle ' width='50rem' style='height:50px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"</br>");
-		});
-	    });
 	        });
 	    });
 	}); 
+
 	$(".navItem").click(function(e){
 		$.get("/api/user_data").then(function(data) {
 			if(Object.getOwnPropertyNames(data).length === 0){
@@ -35,23 +24,23 @@ $(document).ready(function() {
 	   		}
 		});			
 	});
-	// $(".cart").click(function(e){
- //    e.preventDefault();
- //    $.get("/api/user_data").then(function(data) {
- //      if(Object.getOwnPropertyNames(data).length === 0){
- //        window.location.replace("/loginpage");
- //      }else {
- //      	var profileId = localStorage.getItem("profile_id");
- //      	console.log(profileId);
- //        $.ajax("/api/cart/"+profileId, {
-	//       type: "GET",
-	//       }).then(function(result) {
-	//       	console.log(result);
-	//           result.forEach(function(item){
-	//            $(".cartItems").append("<a class='dropdown-item' href='/profiles/"+item.product_name+"'>"+item.product_name+"</a>");
-	//          });
-	//     });
- //      }
- //    });
- //  });   
+
+
+	$("#cart").click(function(e){
+    	e.preventDefault();
+    	$.get("/api/user_data").then(function(data) {
+			if(Object.getOwnPropertyNames(data).length === 0){
+				window.location.replace("/loginpage");
+	   		}else {
+	   			var profileId = sessionStorage.getItem("profile-id");
+		      	$.ajax("/api/cart/"+profileId, {
+			      type: "GET",
+			    }).then(function(result) {
+			        result.forEach(function(item){
+			           $(".cartItems").append("<img class='prodimg' width='200rem' src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>$"+item.Product.price+"<br>Qty: "+item.cart_quantity);
+			        });
+			    });
+			}
+		});	
+	});	
 });      
