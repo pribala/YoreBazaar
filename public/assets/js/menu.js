@@ -25,6 +25,7 @@ $(document).ready(function() {
 		});			
 	});
 
+
 	$("#cart").click(function(e){
     	e.preventDefault();
     	$.get("/api/user_data").then(function(data) {

@@ -44,6 +44,7 @@ $(document).ready(function(){
 
 	$(".checkout").click(function(e){
 		e.preventDefault();
+
 		// add items on cart to orders
 		// bulk insert, get all the product ids from cart, create an array of objects
 		var orderData = {
@@ -51,6 +52,10 @@ $(document).ready(function(){
 	      productId: $("#profileimage").val().trim(),
 	      quantity:$(".member-name").text().trim()
 	    };
+
+	document.write("thanks for shopping with us!!")
+	});
+
 
 	    $.post("/api/order",orderData).done(function(data){
 	    	window.location.href="/";
