@@ -21,7 +21,10 @@
             </div>
             <br>
             <div class="col-sm-2 text-right mt-4">
-                ${{ Product.price }} {{tot}}
+                ${{ Product.price }} 
+            </div>
+              <div class="col-sm-2 text-right mt-4">
+               ${{formatTotal cart_quantity Product.price}}
             </div>
             <div class="col-sm-3 text-right mt-2">
                 {{!-- <i class="fa fa-trash fa-2x" aria-hidden="true"> --}}
