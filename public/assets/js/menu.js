@@ -45,7 +45,12 @@ $(document).ready(function() {
 			}
 		});	
 	});	
-
+	$(".gotocart").click(function(e){
+		e.preventDefault();
+		var profile_id = sessionStorage.getItem("profile-id");
+		window.location.replace("/cart/"+profile_id);
+	
+	})
 	function jsUcfirst(string) {
     	return string.charAt(0).toUpperCase() + string.slice(1);
 	}
