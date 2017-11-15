@@ -9,6 +9,7 @@ var bodyParser = require("body-parser");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+var flash = require("connect-flash"); 
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -33,6 +34,8 @@ app.use(passport.session());
 app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.use(flash());
+
 // Routes
 // =============================================================
 require("./routes/product-api-routes.js")(app);

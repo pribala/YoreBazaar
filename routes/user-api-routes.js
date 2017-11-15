@@ -90,7 +90,15 @@ module.exports = function(app) {
   // Login logic //
   app.get("/loginpage", function(req, res) {
     // render the login page
-    res.render("shop/login");
+    var userMsg = req.flash('loginMessage').toString();
+    var newObj = {
+      message: userMsg
+    }
+    res.render("shop/login", newObj);
+  });
+
+  app.get("/api/loginerror", function(req, res) {
+    res.json("/loginpage");
   });
 
   app.get("/signuppage", function(req, res) {
@@ -101,7 +109,7 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local",{failureRedirect: "/api/loginerror"}), function(req, res) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
