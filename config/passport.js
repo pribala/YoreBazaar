@@ -8,7 +8,7 @@ passport.use(new LocalStrategy(
     usernameField: "email",
     passReqToCallback : true
   },
-  function(email, password, done) {
+  function(req, email, password, done) {
     // When a user tries to sign in this code runs
     db.User.findOne({
       where: {
