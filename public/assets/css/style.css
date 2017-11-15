@@ -109,3 +109,8 @@ left:-100px
 .proname{
 margin-left:80px;
 }
+.gotocart{
+   background-color: black;
+  color:white;
+  font-weight:bold;
+}
