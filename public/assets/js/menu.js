@@ -39,7 +39,7 @@ $(document).ready(function() {
 			      type: "GET",
 			    }).then(function(result) {
 			        result.forEach(function(item){
-			           $(".cartItems").append("<img class='cartimg rounded-circle ' width='50rem' style='height:50px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>Price: $"+item.Product.price+"<br>Qty: "+item.cart_quantity+"<br>");
+			           $(".cartItems").prepend("<img class='cartimg rounded-circle ' width='50rem' style='height:50px'src='"+item.Product.product_image+"'>"+item.Product.product_name+"<br>Price: $"+item.Product.price+"<br>Qty: "+item.cart_quantity+"<br>");
 			        });
 			    });
 			}
