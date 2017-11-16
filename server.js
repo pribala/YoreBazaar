@@ -9,10 +9,11 @@ var bodyParser = require("body-parser");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+var flash = require("connect-flash"); 
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 3030;
+var PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -24,6 +25,10 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 var exphbs = require("express-handlebars");
 var hbs = require("handlebars");
+var Nightmare = require("nightmare");
+
+var nightmare = Nightmare({ show: true });
+
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -33,6 +38,8 @@ app.use(passport.session());
 app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.use(flash());
+
 // Routes
 // =============================================================
 require("./routes/product-api-routes.js")(app);
@@ -41,6 +48,11 @@ require("./routes/user-api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
 require("./routes/cart-api-routes.js")(app);
 require("./routes/order-api-routes.js")(app);
+
+hbs.registerHelper("formatTotal", function(qty, price) {
+  total = qty * price;
+  return total;
+});
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 // db.sequelize.sync({ force: true }).then(function() {

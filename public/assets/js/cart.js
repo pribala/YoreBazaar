@@ -11,7 +11,7 @@ $(document).ready(function(){
 	    });
 	});
 
-	var qty = 0;
+	var qty =1 ;
 	$(".sell").change(function(){
 		qty = $(this).val();
 	});
@@ -44,15 +44,12 @@ $(document).ready(function(){
 
 	$(".checkout").click(function(e){
 		e.preventDefault();
+	
+		var profileId = sessionStorage.getItem("profile-id");
+		window.location.href="/orders/?cart_id="+profileId; 
+		// var profileName = sessionStorage.getItem('profile-name');
+		// $(".name").text("Thanks For Shopping with Us !!"+jsUcfirst(profileName));
 
-		// add items on cart to orders
-		// bulk insert, get all the product ids from cart, create an array of objects
-		// var orderData = {
-	    //   profileId: sessionStorage.getItem("profile-id"),
-	    //   productId: $("#profileimage").val().trim(),
-	    //   quantity:$(".member-name").text().trim()
-	    // };
-		document.write("thanks for shopping with us!!")
 	 });
 
 		$.post("/api/order",orderData).done(function(data){

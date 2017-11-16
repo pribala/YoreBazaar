@@ -7,6 +7,7 @@ $(document).ready(function() {
          });
       });
  
+
 	$.get("/api/user_data").then(function(data) {
 		$.ajax("/api/members/?email="+data.email, {
 	      type: "GET",
@@ -14,6 +15,8 @@ $(document).ready(function() {
 	      	   result.forEach(function(item){
 	           $(".members").append("<a class='dropdown-item' href='/profiles/"+item.UserEmail+"'>"+item.profile_name+"</a>");
 	        });
+	      	   var profileName = sessionStorage.getItem('profile-name');
+ 				$(".title").text("Hi "+jsUcfirst(profileName));
 	    });
 	}); 
 
@@ -24,7 +27,6 @@ $(document).ready(function() {
 	   		}
 		});			
 	});
-
 
 	$("#cart").click(function(e){
     	e.preventDefault();
@@ -49,4 +51,9 @@ $(document).ready(function() {
 		window.location.replace("/cart/"+profile_id);
 	
 	})
+
+	function jsUcfirst(string) {
+    	return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+
 });      

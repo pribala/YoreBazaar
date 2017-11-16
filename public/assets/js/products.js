@@ -1,6 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
-  
+  //sessionStorage.clear();
   $(".cart-btn").click(function(e){
     e.preventDefault();
     $.get("/api/user_data").then(function(data) {

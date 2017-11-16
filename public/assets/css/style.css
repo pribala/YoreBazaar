@@ -109,3 +109,37 @@ left:-100px
 .proname{
 margin-left:80px;
 }
+.gotocart{
+   background-color: black;
+  color:white;
+  font-weight:bold;
+}
+
+/*Styles for modals in member page*/
+.marg{
+  margin-top: 75px;
+}
+.marg div{
+  border: none;
+}
+#profile-submit{
+  margin-top: 15px;
+}
+
+#profile-update{
+  margin-top: 15px;
+}
+.mhead{
+  font-weight: bold;
+  color: white;
+  background-color: black;
+}
+.mhead h5{
+  margin: 0 auto;
+}
+#profilename{
+  margin-bottom: 20px;
+}
+.modal-body label{
+  font-weight: bold;
+}
