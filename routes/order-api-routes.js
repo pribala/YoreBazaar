@@ -22,7 +22,27 @@
       res.render("shop/orders", hbsObject);
       });
     });
-  
-    }
+
+    app.post("/api/order", function(req, res) {
+    // create takes an argument of an object describing the item we want to insert
+    // into our table. 
+    //console.log(req.body);
+    var data = (req.body);
+    db.Order.create({
+      ProfileProfileId: data[0].profileId
+    }).then(function(dbOrder){
+      data.forEach(function(item){
+        db.OrderProduct.create({
+          OrderId:dbOrder.id,
+          ProductId:item.productId,
+          quantity: item.qty
+        }).then(function(dbOrders){
+            
+          });
+        });
+          res.json(dbOrder);
+      });
+    });
+  }
 
   

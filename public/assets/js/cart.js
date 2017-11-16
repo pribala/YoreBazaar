@@ -84,28 +84,25 @@ $(document).ready(function(){
 		window.location.href="/shopping/?cart_id="+profileId;
 	});
 
-	$(".checkout").click(function(e){
+	$(".checkout" ).click(function(e) {
 		e.preventDefault();
+		var profileId = sessionStorage.getItem("profile-id");
+	 	$.get("/api/cart/"+profileId).then(function(data){
+	 		console.log(data);
+	 		var orderData = [];
+	 		data.forEach(function(item){
+	 			var orders = {
+	 				profileId: item.ProfileProfileId,
+	 				productId: item.ProductId,
+	 				qty: item.cart_quantity
+	 			}
+	 			orderData.push(orders);
+	 		})
+	 		console.log(orderData);
+	 		$.ajax({url: "/api/order",  type: "POST", contentType: "application/json",data: JSON.stringify(orderData)}).done(function(){
+	 			console.log("created order");
+	 		});
+	 	});
+	});
 
-		// add items on cart to orders
-		// bulk insert, get all the product ids from cart, create an array of objects
-		// var orderData = {
-	    //   profileId: sessionStorage.getItem("profile-id"),
-	    //   productId: $("#profileimage").val().trim(),
-	    //   quantity:$(".member-name").text().trim()
-	    // };
-		document.write("thanks for shopping with us!!")
-	 });
-
-		$.post("/api/order",orderData).done(function(data){
-		   	window.location.href="/";
-		}).catch(function(err) {
-		      console.log(err);
-		});
-	// }); 
-   
-	// $(".clear").click(function(e){
-	// 	e.preventDefault();
-	// 	// clear the cart
-	// });
 });
