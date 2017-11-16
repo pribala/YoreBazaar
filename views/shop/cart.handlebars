@@ -11,7 +11,7 @@
             </div>
             <div class="form-group col-sm-2 mt-4">
                 <label for="sel1">Quantity</label>
-                <input type="number" class="sell" value={{cart_quantity}}>
+                <input data-id={{id}} data-product={{ProductId}} type="number" class="sell" value={{cart_quantity}}>
             </div>
             <br>
             <div class="col-sm-2 text-right mt-4">
@@ -21,8 +21,8 @@
                ${{formatTotal cart_quantity Product.price}}
             </div>
             <div class="col-sm-3 text-right mt-2">
-         <a href="#" class="btn btn-default update" data-id={{id}}> <i class="fa fa-pencil" aria-hidden="true">
-               </i></a> 
+         {{!--<a href="#" class="btn btn-default update" data-id={{id}}> <i class="fa fa-pencil" aria-hidden="true">
+               </i></a> --}}
   <a href="# " class="btn btn-default delete" data-id={{id}}> <i class="fa fa-trash" aria-hidden="true"> 
                     </i></a>
             </div>
@@ -39,6 +39,7 @@
     <a href="#" type="button" class="btn btn-success checkout">Checkout</a>
     {{!-- <a href="#" type="button" class="btn btn-success clear">Clear</a> --}}
 </div>
-{{ else }} Your shopping cart is empty. {{/if}}
+{{ else }} Your shopping cart is empty. 
+{{/if}}
 <script src="/assets/js/cart.js"></script>
 
