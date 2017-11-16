@@ -97,11 +97,11 @@ $(document).ready(function(){
 		document.write("thanks for shopping with us!!")
 	 });
 
-		$.post("/api/order",orderData).done(function(data){
-		   	window.location.href="/";
-		}).catch(function(err) {
-		      console.log(err);
-		});
+		// $.post("/api/order",orderData).done(function(data){
+		//    	window.location.href="/";
+		// }).catch(function(err) {
+		//       console.log(err);
+		// });
 	// }); 
    
 	// $(".clear").click(function(e){
