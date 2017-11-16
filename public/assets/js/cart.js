@@ -101,6 +101,7 @@ $(document).ready(function(){
 	 		console.log(orderData);
 	 		$.ajax({url: "/api/order",  type: "POST", contentType: "application/json",data: JSON.stringify(orderData)}).done(function(){
 	 			console.log("created order");
+	 			// delete all cart items for the profile
 	 		});
 	 	});
 	});

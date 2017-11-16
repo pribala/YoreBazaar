@@ -13,12 +13,15 @@
       }
       db.Order.findAll({
           where: query,
-            include:[{model:db.Profile},
-             {model: db.Product}
+            include:[
+             {
+              model: model.db.Product,
+              through: model.db.OrderProduct
+              },
              ]
       }).then(function(dborder) {
         //We have access to the products as an argument inside of the callback function
-     
+     console.log(dborder);
       res.render("shop/orders", hbsObject);
       });
     });

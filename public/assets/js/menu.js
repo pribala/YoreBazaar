@@ -71,4 +71,9 @@ $(document).ready(function() {
 	   		}
 		});			
 	});
+
+	$(".order").click(function(e){
+		e.preventDefault();
+		// get all orders for a particular profile
+	});
 });      
