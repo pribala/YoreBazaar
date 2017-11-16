@@ -75,5 +75,14 @@ $(document).ready(function() {
 	$(".order").click(function(e){
 		e.preventDefault();
 		// get all orders for a particular profile
+		$.get("/api/user_data").then(function(data) {
+			if(Object.getOwnPropertyNames(data).length === 0){
+				window.location.replace("/loginpage");
+	   		}else {
+	   			var profileId = sessionStorage.getItem("profile-id");
+				window.location.href="/orders/"+profileId;
+	   		}
+		});		
+
 	});
 });      

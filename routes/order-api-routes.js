@@ -13,23 +13,33 @@
       }
       db.Order.findAll({
           where: query,
+            //attributes: {include: [[db.sequelize.condition(db.sequelize.col('order_quantity'), '*', db.sequelize.col('price')),'tot']]}
             include:[
              {
-              model: model.db.Product,
-              through: model.db.OrderProduct
-              },
-             ]
-      }).then(function(dborder) {
+              model: db.Product,
+              through: db.OrderProduct
+              }
+            ]
+      }).then(function(dbOrder) {
         //We have access to the products as an argument inside of the callback function
-     console.log(dborder);
-      res.render("shop/orders", hbsObject);
+        var cartTotal = 0;
+        dbOrder.forEach(function(item){
+          item.Products.forEach(function(prod){
+            var total = prod.price*prod.OrderProduct.order_quantity;
+            cartTotal += total;
+          });
+        });
+        var hbsObject = {
+          products: dbOrder,
+          total: cartTotal
+        };
+        res.render("shop/orders", hbsObject);
       });
     });
 
     app.post("/api/order", function(req, res) {
     // create takes an argument of an object describing the item we want to insert
     // into our table. 
-    //console.log(req.body);
     var data = (req.body);
     db.Order.create({
       ProfileProfileId: data[0].profileId
@@ -38,7 +48,7 @@
         db.OrderProduct.create({
           OrderId:dbOrder.id,
           ProductId:item.productId,
-          quantity: item.qty
+          order_quantity: item.qty
         }).then(function(dbOrders){
             
           });

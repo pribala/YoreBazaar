@@ -2,30 +2,29 @@
 {{# if products }}
 <div class="cart page">
     <ul class="list-group">
-        {{# each order }}
-        <li class="list-group-item clearfix">
-            <div class="col-sm-5">
-                <strong>{{ order.product_name }}</strong>
-                <br/>
-                <img class="prodimg" src={{order.product_image}} class="rounded img-fluid" width="200rem">
-            </div>
-    
-            <br>
-            <div class="col-sm-2 text-right mt-4" >
-                {{ order.Order.quantity}}
-            </div>
-             <div class="col-sm-2 text-right mt-4" >
-                ${{ order.Product.price }}
-            </div>
-             <div class="col-sm-2 text-right mt-4" >
-                ${{ order.Order.order_date}}
-            </div>
-        </li>
+        {{# each products }}
+            {{ formatDate order_date}}
+                {{# each Products}}
+                    <li class="list-group-item clearfix">
+                        <div class="col-sm-5">
+                            <strong>{{ product_name }}</strong>
+                            <br/>
+                            <img class="prodimg" src={{product_image}} class="rounded img-fluid" width="200rem">
+                        </div>
+                        <br>
+                        <div class="col-sm-2 text-right mt-4" >
+                            {{ OrderProduct.order_quantity }}
+                        </div>
+                        <div class="col-sm-2 text-right mt-4" >
+                            ${{ formatTotal price OrderProduct.order_quantity }}
+                        </div>
+                    </li>
+                {{/each}}
         {{/each}}
     </ul>
 </div>
 <div class="text-right">
-    <strong>Total: ${{ total }} </strong>
+    <strong>Order Total: ${{ total }} </strong>
 </div>
 <hr>
 

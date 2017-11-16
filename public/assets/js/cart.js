@@ -11,30 +11,6 @@ $(document).ready(function(){
 	    });
 	});
 
-	// var qty =1 ;
-	// $(".sell").change(function(){
-	// 	qty = $(this).val();
-	// });
-
-	// $(".update").click(function(e){
-	// 	e.preventDefault();
-	// 	var cartData = {
- //      		quantity: qty,
- //      		id: $(this).data("id")
- //    	};
-	   
-	//     // Send the PUT request.
-	//     $.ajax("/api/cart", {
-	//       type: "PUT",
-	//       data: cartData
-	//       }).then(
-	//       function() {
-	//         console.log("updated item");
-	//         // Reload the page to get the updated profile
-	//         location.reload();
-	//       });
- //    });
-
  	$(".sell").click(function(){
 		$(this).focus();
 	})
@@ -76,11 +52,9 @@ $(document).ready(function(){
 		});
 	};
 
-
 	$(".shop").click(function(e){
 		e.preventDefault();
 		var profileId = sessionStorage.getItem("profile-id");
-		//console.log(profileId+"pId");
 		window.location.href="/shopping/?cart_id="+profileId;
 	});
 
@@ -102,6 +76,13 @@ $(document).ready(function(){
 	 		$.ajax({url: "/api/order",  type: "POST", contentType: "application/json",data: JSON.stringify(orderData)}).done(function(){
 	 			console.log("created order");
 	 			// delete all cart items for the profile
+	 			$.ajax("/deletecart/" + profileId, {
+      				type: "DELETE",
+    			}).then(function() {
+	        		console.log("deleted cart items");
+	       			 // Reload the page to get the updated list
+	    			window.location.href="/orders/"+profileId;
+	    		});
 	 		});
 	 	});
 	});
