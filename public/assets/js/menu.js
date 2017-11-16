@@ -9,6 +9,9 @@ $(document).ready(function() {
  
 
 	$.get("/api/user_data").then(function(data) {
+		if(Object.getOwnPropertyNames(data).length === 0){
+			sessionStorage.clear();
+	   	}else{
 		$.ajax("/api/members/?email="+data.email, {
 	      type: "GET",
 	      }).then(function(result) {
@@ -18,6 +21,7 @@ $(document).ready(function() {
 	      	   var profileName = sessionStorage.getItem('profile-name');
  				$(".title").text("Hi "+jsUcfirst(profileName));
 	    });
+	   }   
 	}); 
 
 	$(".navItem").click(function(e){
@@ -45,6 +49,7 @@ $(document).ready(function() {
 			}
 		});	
 	});	
+	
 	$(".gotocart").click(function(e){
 		e.preventDefault();
 		var profile_id = sessionStorage.getItem("profile-id");
@@ -54,4 +59,16 @@ $(document).ready(function() {
 	function jsUcfirst(string) {
     	return string.charAt(0).toUpperCase() + string.slice(1);
 	}
+
+	$(".shop").click(function(e){
+		e.preventDefault();
+		$.get("/api/user_data").then(function(data) {
+			if(Object.getOwnPropertyNames(data).length === 0){
+				window.location.replace("/loginpage");
+	   		}else {
+	   			var profileId = sessionStorage.getItem("profile-id");
+				window.location.href="/shopping/?cart_id="+profileId;
+	   		}
+		});			
+	});
 });      
