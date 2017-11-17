@@ -1,4 +1,5 @@
-# YoreBazaar Your 
+# YoreBazaar 
+Your 
 Personalized Shopping Experience
 
 
@@ -9,6 +10,10 @@ YoreBazaar is a shopping site that aims to provide a more personalized shopping 
 The application is built with MySQL, Node, Express, Handlebars and Sequelize and follows the MVC design pattern; uses Node and Sequelize to query and route data in the app, and Handlebars to generate the HTML.
 
 ## Instructions
+
+The app is hosted on Heroku and can be accessed using the url 
+
+[ https://infinite-hamlet-30446.herokuapp.com/ ]
 
 ### App Setup
 
