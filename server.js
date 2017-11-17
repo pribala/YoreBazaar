@@ -26,6 +26,10 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 var exphbs = require("express-handlebars");
 var hbs = require("handlebars");
+var Nightmare = require("nightmare");
+
+var nightmare = Nightmare({ show: true });
+
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());

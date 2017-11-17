@@ -56,6 +56,7 @@ $(document).ready(function() {
 		window.location.replace("/cart/"+profile_id);
 	
 	})
+
 	function jsUcfirst(string) {
     	return string.charAt(0).toUpperCase() + string.slice(1);
 	}
@@ -85,4 +86,5 @@ $(document).ready(function() {
 		});		
 
 	});
+
 });      

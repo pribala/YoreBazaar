@@ -60,6 +60,7 @@ $(document).ready(function(){
 
 	$(".checkout" ).click(function(e) {
 		e.preventDefault();
+
 		var profileId = sessionStorage.getItem("profile-id");
 	 	$.get("/api/cart/"+profileId).then(function(data){
 	 		console.log(data);
@@ -87,3 +88,6 @@ $(document).ready(function(){
 	 	});
 	});
  });
+
+	
+
