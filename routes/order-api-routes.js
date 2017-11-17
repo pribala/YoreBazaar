@@ -1,6 +1,4 @@
-
- 
-  var db = require("../models");
+ var db = require("../models");
   
   // Routes =============================================================
   module.exports = function(app) {
@@ -52,11 +50,12 @@
           order_quantity: item.qty
         }).then(function(dbOrders){
             
-          });
         });
+      });
           res.json(dbOrder);
       });
     });
+
      // GET route for getting order details for an order
     app.get("/order/:order_id", function(req, res) {
       // findAll returns all entries for a table when used with no options
@@ -79,3 +78,4 @@
       });
     });
   }
+
