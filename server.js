@@ -65,7 +65,7 @@ hbs.registerHelper("formatDate", function(date) {
 // });
 db.sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
 .then(function(){
-    return db.sequelize.sync({ force:true});
+    return db.sequelize.sync({ force:false});
 })
 .then(function(){
     return db.sequelize.query('SET FOREIGN_KEY_CHECKS = 1')
