@@ -6,25 +6,26 @@
         <li class="list-group-item clearfix">
             <div class="col-sm-3 col-xs-3">
                 <strong>{{ Product.product_name }}</strong>
-                <br/>
+                <br>
                 <img class="prodimg" src={{Product.product_image}}  class="img-fluid" width="200rem">
             </div>
-            <div class="form-group col-sm-2 col-xs-2 mt-4">
+            <div class="form-group col-sm-3 col-xs-3 mt-4  text-right " id="cartqty">
                 <label for="sel1">Quantity</label>
-                <input data-id={{id}} data-product={{ProductId}} type="number" class="sell" value={{cart_quantity}}>
+                </br>
+                <input data-id={{id}} data-product={{ProductId}} type="number" class="sell" value={{cart_quantity}} style="width:50px;">
             </div>
             <br>
-            <div class=" col-sm-2 col-xs-2 text-right ">
+            <div class=" col-sm-2 col-xs-1 text-right ">
                  <label >Price</label>
                  </br>
                 ${{ Product.price }} 
             </div>
-              <div class="col-sm-2 col-xs-2 text-right ">
+              <div class="col-sm-1 col-xs-1 text-right ">
                     <label >Total</label>
                     </br>
                ${{formatTotal cart_quantity Product.price}}
             </div>
-            <div class="col-sm-3 col-xs-2 text-right mt-2">
+            <div class="col-sm-2 col-xs-2 text-right mt-2">
          {{!--<a href="#" class="btn btn-default update" data-id={{id}}> <i class="fa fa-pencil" aria-hidden="true">
                </i></a> --}}
   <a href="# " class="btn btn-danger delete" data-id={{id}}> <i class="fa fa-trash fa-1x" aria-hidden="true"> 
