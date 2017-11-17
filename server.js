@@ -59,14 +59,6 @@ hbs.registerHelper("formatDate", function(date) {
     date = "Order Date "+moment(date).format("h:mma on dddd");
     return date;
 });
-
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-// db.sequelize.sync({ force: true }).then(function() {
-//   app.listen(PORT, function() {
-//     console.log("App listening on PORT " + PORT);
-//   });
-// });
 db.sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
 .then(function(){
     return db.sequelize.sync({ force:true});
