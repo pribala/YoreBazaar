@@ -10,6 +10,7 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 var flash = require("connect-flash"); 
+var moment = require('moment');
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -53,6 +54,12 @@ hbs.registerHelper("formatTotal", function(qty, price) {
   total = qty * price;
   return total;
 });
+
+hbs.registerHelper("formatDate", function(date) {
+    date = "Order Date "+moment(date).format("h:mma on dddd");
+    return date;
+});
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 // db.sequelize.sync({ force: true }).then(function() {
@@ -62,7 +69,7 @@ hbs.registerHelper("formatTotal", function(qty, price) {
 // });
 db.sequelize.query('SET FOREIGN_KEY_CHECKS = 0')
 .then(function(){
-    return db.sequelize.sync({ force:false});
+    return db.sequelize.sync({ force:true});
 })
 .then(function(){
     return db.sequelize.query('SET FOREIGN_KEY_CHECKS = 1')
