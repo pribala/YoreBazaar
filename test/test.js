@@ -1,7 +1,7 @@
 var Nightmare = require("nightmare");
 var expect = require("chai").expect;
 
-describe("Codecademy", function() {
+describe("Yourebazaar", function() {
   // The default tests in mocha is 2 seconds.
   // Extending it to 30 seconds to have time to load the pages
 
@@ -9,41 +9,83 @@ describe("Codecademy", function() {
   it("should send user to the catalog page", function(done) {
     // ID for the login button.
     Nightmare({ show: true })
-      .goto("https://codecademy.com")
-      // Click the catalog link
-      .click("a[href='/learn/all']")
+      .goto("https://infinite-hamlet-30446.herokuapp.com/")
+      // Click the cart btn
+      .click("a[href='/loginpage']")
       // Evaluate the title
       .evaluate(function() {
         return document.title;
       })
       // Asset the title is as expected
       .then(function(title) {
-        expect(title).to.equal("Catalog | Codecademy");
+        expect(title).to.equal("Login Form");
         done();
+      })
+      .catch((error) => {
+        console.error('gotologin', error);
       });
   });
 
-  it("should present a link to course catalog after login", function(done) {
+  it("should present a link to members page after login", function(done) {
     new Nightmare({ show: true })
-      .goto("https://www.codecademy.com/login")
+      .goto("https://infinite-hamlet-30446.herokuapp.com/loginpage")
       // Enter username.
-      .type("#user_login", "ResilD")
+      .type("#email-input", "email")
       // Enter password.
-      .type("#login__user_password", "dummy*password")
+      .type("#password-input", "password")
       // Click the login button
-      .click("#user_submit")
+      .click("submit")
       // Evaluate the following selector
       .evaluate(function() {
         // Assert the "learn" link can be found
-        return document.querySelector("a[href='/learn']");
+        return document.querySelector("a[href='/profile/email']");
       })
       .then(function(link) {
         expect(link).to.not.equal(undefined);
         done();
+      }).catch((error) => {
+        console.error('loginerror', error);
+      });
+  });
+  it("should present a link to members page after signup", function(done) {
+    new Nightmare({ show: true })
+      .goto("https://infinite-hamlet-30446.herokuapp.com/signuppage")
+      // Enter username.
+      .type("#email-input", "email")
+      // Enter password.
+      .type("#password-input", "password")
+      // Click the login button
+      .click("submit")
+      // Evaluate the following selector
+      .evaluate(function() {
+        // Assert the "learn" link can be found
+        return document.querySelector("a[href='/profile/email']");
+      })
+      .then(function(link) {
+        expect(link).to.not.equal(undefined);
+        done();
+      }).catch((error) => {
+        console.error('signup', error);
+      });
+  });
+  it("should present a link to shopping page after clicking user", function(done) {
+    new Nightmare({ show: true })
+      .goto("https://infinite-hamlet-30446.herokuapp.com/profiles/email")
+      .click(".add-profile")
+      // Evaluate the following selector
+      .evaluate(function() {
+        // Assert the "learn" link can be found
+        return document.querySelector("a[href='/profile/email']");
+      })
+      .then(function(link) {
+        expect(link).to.not.equal(undefined);
+        done();
+      }).catch((error) => {
+        console.error('signup', error);
       });
   });
 
-  it("should throw an error for fun", function() {
-    throw new Error("Failed on purpose, just to make the Mocha output more interesting.");
-  });
+  // it("should throw an error for fun", function() {
+  //   throw new Error("Failed on purpose, just to make the Mocha output more interesting.");
+  // });
 });

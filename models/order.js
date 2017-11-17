@@ -2,8 +2,13 @@ module.exports = function(sequelize, DataTypes) {
   var Order = sequelize.define("Order", {
     order_date: {
       type: DataTypes.DATE,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+      dialectOptions: {
+        useUTC: false //for reading from database
+    },
+    timezone: '+08:00' //for writing to database
     }
+    
   });
 
   Order.associate = function(models) {
