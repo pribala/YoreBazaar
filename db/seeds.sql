@@ -1,5 +1,5 @@
 
-USE  yorebazaar;
+USE yorebazaar;
  
 
 
