@@ -21,12 +21,14 @@
             ]
       }).then(function(dbOrder) {
         //We have access to the products as an argument inside of the callback function
-        var cartTotal = 0;
+        var cartTotal = [];
         dbOrder.forEach(function(item){
+         var amount =0;
           item.Products.forEach(function(prod){
             var total = prod.price*prod.OrderProduct.order_quantity;
-            cartTotal += total;
+           amount += total;
           });
+         cartTotal.push(amount);
         });
         var hbsObject = {
           products: dbOrder,
