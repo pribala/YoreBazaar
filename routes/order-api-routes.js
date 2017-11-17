@@ -1,6 +1,5 @@
 
- 
-  var db = require("../models");
+ var db = require("../models");
   
   // Routes =============================================================
   module.exports = function(app) {
@@ -52,8 +51,30 @@
           order_quantity: item.qty
         }).then(function(dbOrders){
             
-          });
         });
+      });
+          res.json(dbOrder);
+      });
+    });
+
+     // GET route for getting order details for an order
+    app.get("/order/:order_id", function(req, res) {
+      // findAll returns all entries for a table when used with no options
+      var query = {};
+      if (req.params.order_id) {
+        query.OrderId = req.params.order_id;
+      }
+      db.OrderProduct.findAll({
+          where: query,
+            //attributes: {include: [[db.sequelize.condition(db.sequelize.col('order_quantity'), '*', db.sequelize.col('price')),'tot']]}
+            // include:[
+            //  {
+            //   model: db.Product,
+            //   through: db.OrderProduct
+            //   }
+            // ]
+      }).then(function(dbOrder) {
+        //We have access to the products as an argument inside of the callback function
           res.json(dbOrder);
       });
     });
