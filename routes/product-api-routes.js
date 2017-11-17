@@ -13,13 +13,19 @@ module.exports = function(app) {
 
   // GET route for getting all of the products
   app.get("/", function(req, res) {
+     var profile_id = ""; 
+     if (req.query.cartId) {
+       profile_id = req.query.cart_id;
+     }
     // findAll returns all entries for a table when used with no options
     db.Product.findAll({}).then(function(dbProduct) {
       //We have access to the products as an argument inside of the callback function
       var hbsObject = {
-        products: dbProduct
+        products: dbProduct,
+        profile_id: profile_id
       };
-      res.render("shop/products", hbsObject);
+      //res.render("shop/products", hbsObject);
+      res.render("shop/shopping", hbsObject);
     });
   });
 
@@ -53,7 +59,7 @@ module.exports = function(app) {
       var hbsObject = {
         products: dbProduct
       };
-      res.render("shop/products", hbsObject);
+      res.render("shop/shopping", hbsObject);
     });
   });
 

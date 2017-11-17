@@ -19,11 +19,9 @@ module.exports = function(app) {
       	 ]
     }).then(function(dbCart) {
       //We have access to the products as an argument inside of the callback function
-      console.log(dbCart);
       var total = 0;
       dbCart.forEach(function(item){
-        console.log(item.tot);
-      	total+=item.cart_quantity * item.Product.price;
+       	total+=item.cart_quantity * item.Product.price;
       });
       var hbsObject = {
         products: dbCart,
@@ -96,6 +94,19 @@ module.exports = function(app) {
     }, {
       where: {
         id: req.body.id
+      }
+    })
+    .then(function(dbCart) {
+      res.json(dbCart);
+    });
+  });
+
+  // DELETE route for emptying all items from the cart after order is confirmed
+  app.delete("/deletecart/:id", function(req, res) {
+    // Destroy takes in one argument: a "where object describing the item we want to destroy
+    db.Cart.destroy({
+      where: {
+        ProfileProfileId: req.params.id
       }
     })
     .then(function(dbCart) {

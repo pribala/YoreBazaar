@@ -143,3 +143,24 @@ margin-left:80px;
 .modal-body label{
   font-weight: bold;
 }
+.btn-default{
+
+font-weight:bold;
+}
+label{
+font-weight: bold;
+}
+/* .title{
+  font-weight: bold;
+} */
+a.nav-link.title:link,a.nav-link.title:visited,a.nav-link.title:hover,a.nav-link.title:active{
+  color:lightgreen;
+  font-weight: bold;
+}
+a{
+  text-decoration: none;
+}
+#log{
+background-color:#292b2c;
+ color: white;
+}
