@@ -56,7 +56,7 @@ hbs.registerHelper("formatTotal", function(qty, price) {
 });
 
 hbs.registerHelper("formatDate", function(date) {
-    date = "Order Date "+moment(date).format("h:mma on dddd");
+    date = "Order Date "+moment(date).format('MMMM Do YYYY, h:mm:ss a');
     return date;
 });
 
