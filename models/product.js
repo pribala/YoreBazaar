@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(9,2),
       allowNull: false,
     },
     product_image: {
@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0
     },
     sales: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(9,2),
       defaultValue: 0
     }
   }, {
